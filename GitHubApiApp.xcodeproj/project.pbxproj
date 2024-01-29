@@ -54,14 +54,30 @@
 		139B69062B67DF58000521FD /* GitHubApiApp */ = {
 			isa = PBXGroup;
 			children = (
-				139B69072B67DF58000521FD /* AppDelegate.swift */,
-				139B69092B67DF58000521FD /* SceneDelegate.swift */,
 				139B690B2B67DF58000521FD /* ViewController.swift */,
-				139B69102B67DF59000521FD /* Assets.xcassets */,
-				139B69122B67DF59000521FD /* LaunchScreen.storyboard */,
-				139B69152B67DF59000521FD /* Info.plist */,
+				139B691C2B67E3F7000521FD /* App */,
+				139B691B2B67E3D4000521FD /* Resources */,
 			);
 			path = GitHubApiApp;
+			sourceTree = "<group>";
+		};
+		139B691B2B67E3D4000521FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				139B69122B67DF59000521FD /* LaunchScreen.storyboard */,
+				139B69102B67DF59000521FD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		139B691C2B67E3F7000521FD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				139B69072B67DF58000521FD /* AppDelegate.swift */,
+				139B69092B67DF58000521FD /* SceneDelegate.swift */,
+				139B69152B67DF59000521FD /* Info.plist */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +298,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LRWQUTLHSS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GitHubApiApp/Info.plist;
+				INFOPLIST_FILE = GitHubApiApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -313,7 +329,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LRWQUTLHSS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GitHubApiApp/Info.plist;
+				INFOPLIST_FILE = GitHubApiApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
