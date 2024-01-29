@@ -54,6 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let searchNavigationController = createSearchNavigationController()
         let favoritesNavigationController = createFavoritesNavigationController()
         let tabBarController = UITabBarController()
+        UITabBar.appearance().tintColor = .systemGreen
         tabBarController.viewControllers = [searchNavigationController, favoritesNavigationController]
         return tabBarController
     }
