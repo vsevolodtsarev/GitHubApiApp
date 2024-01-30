@@ -25,6 +25,22 @@ final class FollowersListViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        NetworkManager.shared.getFollowers(for: username, page: 1) { [weak self] result  in
+            
+            guard let self else { return }
+            
+            switch result {
+            case .success(let followers):
+                print("followers count = \(followers.count)")
+                print(followers)
+                
+            case .failure(let error):
+                self.presentAlertViewControllerOnMainThread(alertTitle: "Bad Stuff Happened!",
+                                                            alertMessage: error.rawValue,
+                                                            buttonTitle: "Ok")
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
