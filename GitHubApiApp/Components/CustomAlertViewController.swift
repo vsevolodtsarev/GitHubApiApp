@@ -1,5 +1,5 @@
 //
-//  AlertViewController.swift
+//  CustomAlertViewController.swift
 //  GitHubApiApp
 //
 //  Created by Всеволод Царев on 30.01.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AlertViewController: UIViewController {
+final class CustomAlertViewController: UIViewController {
     
     private let containerView = UIView()
     private let titleLabel = CustomTitleLabel(textAlignment: .center, fontSize: 20)

@@ -12,7 +12,7 @@ extension UIViewController {
                                                 alertMessage: String,
                                                 buttonTitle: String) {
         DispatchQueue.main.async {
-            let alertViewController = AlertViewController(alertTitle: alertTitle, alertMessage: alertMessage, buttonTitle: buttonTitle)
+            let alertViewController = CustomAlertViewController(alertTitle: alertTitle, alertMessage: alertMessage, buttonTitle: buttonTitle)
             alertViewController.modalTransitionStyle = .crossDissolve
             alertViewController.modalPresentationStyle = .overFullScreen
             self.present(alertViewController, animated: true)
