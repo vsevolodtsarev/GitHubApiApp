@@ -17,6 +17,7 @@
 		139B69222B67F592000521FD /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69212B67F592000521FD /* CustomTextField.swift */; };
 		139B69252B681C82000521FD /* FollowersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69242B681C82000521FD /* FollowersListViewController.swift */; };
 		139B69272B68CFFF000521FD /* CustomTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69262B68CFFF000521FD /* CustomTitleLabel.swift */; };
+		139B69292B68D314000521FD /* CustomBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69282B68D314000521FD /* CustomBodyLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		139B69212B67F592000521FD /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		139B69242B681C82000521FD /* FollowersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewController.swift; sourceTree = "<group>"; };
 		139B69262B68CFFF000521FD /* CustomTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleLabel.swift; sourceTree = "<group>"; };
+		139B69282B68D314000521FD /* CustomBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBodyLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				139B69212B67F592000521FD /* CustomTextField.swift */,
 				139B691F2B67EE0B000521FD /* CustomButton.swift */,
 				139B69262B68CFFF000521FD /* CustomTitleLabel.swift */,
+				139B69282B68D314000521FD /* CustomBodyLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			files = (
 				139B690C2B67DF58000521FD /* FavoritesViewController.swift in Sources */,
 				139B69082B67DF58000521FD /* AppDelegate.swift in Sources */,
+				139B69292B68D314000521FD /* CustomBodyLabel.swift in Sources */,
 				139B69222B67F592000521FD /* CustomTextField.swift in Sources */,
 				139B69252B681C82000521FD /* FollowersListViewController.swift in Sources */,
 				139B691E2B67E4CD000521FD /* SearchViewController.swift in Sources */,
