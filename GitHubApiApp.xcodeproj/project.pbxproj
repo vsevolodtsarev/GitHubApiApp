@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1331BD9B2B68E2BF00AD1928 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1331BD9A2B68E2BF00AD1928 /* UIViewController + Extensions.swift */; };
 		139B69082B67DF58000521FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69072B67DF58000521FD /* AppDelegate.swift */; };
 		139B690A2B67DF58000521FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69092B67DF58000521FD /* SceneDelegate.swift */; };
 		139B690C2B67DF58000521FD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B690B2B67DF58000521FD /* FavoritesViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1331BD9A2B68E2BF00AD1928 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
 		139B69042B67DF58000521FD /* GitHubApiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		139B69072B67DF58000521FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		139B69092B67DF58000521FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		139B692D2B68E24B000521FD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1331BD9A2B68E2BF00AD1928 /* UIViewController + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				139B69222B67F592000521FD /* CustomTextField.swift in Sources */,
 				139B69252B681C82000521FD /* FollowersListViewController.swift in Sources */,
 				139B691E2B67E4CD000521FD /* SearchViewController.swift in Sources */,
+				1331BD9B2B68E2BF00AD1928 /* UIViewController + Extensions.swift in Sources */,
 				139B690A2B67DF58000521FD /* SceneDelegate.swift in Sources */,
 				139B69272B68CFFF000521FD /* CustomTitleLabel.swift in Sources */,
 				139B69202B67EE0B000521FD /* CustomButton.swift in Sources */,
