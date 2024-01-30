@@ -29,7 +29,7 @@ final class SearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     private func createDismissKeyboardTapGesture() {
@@ -38,10 +38,16 @@ final class SearchViewController: UIViewController {
     }
     
     @objc private func pushFollowersListViewController() {
-        guard isUsernameEntered else { return }
-        let followersListViewController = FollowersListViewController()
-        followersListViewController.username = usernameTextField.text
-        followersListViewController.title = usernameTextField.text
+        guard isUsernameEntered else {
+            presentAlertViewControllerOnMainThread(
+                alertTitle: "Empty Username",
+                alertMessage: "Please enter a username. We need to know who to look for 😀.",
+                buttonTitle: "Ok")
+            return
+        }
+        guard let userName = usernameTextField.text else { return }
+        let followersListViewController = FollowersListViewController(username: userName)
+        followersListViewController.title = userName
         navigationController?.pushViewController(followersListViewController, animated: true)
     }
     
