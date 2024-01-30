@@ -16,6 +16,7 @@
 		139B69202B67EE0B000521FD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B691F2B67EE0B000521FD /* CustomButton.swift */; };
 		139B69222B67F592000521FD /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69212B67F592000521FD /* CustomTextField.swift */; };
 		139B69252B681C82000521FD /* FollowersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69242B681C82000521FD /* FollowersListViewController.swift */; };
+		139B69272B68CFFF000521FD /* CustomTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69262B68CFFF000521FD /* CustomTitleLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		139B691F2B67EE0B000521FD /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		139B69212B67F592000521FD /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		139B69242B681C82000521FD /* FollowersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewController.swift; sourceTree = "<group>"; };
+		139B69262B68CFFF000521FD /* CustomTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				139B69212B67F592000521FD /* CustomTextField.swift */,
 				139B691F2B67EE0B000521FD /* CustomButton.swift */,
+				139B69262B68CFFF000521FD /* CustomTitleLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				139B69252B681C82000521FD /* FollowersListViewController.swift in Sources */,
 				139B691E2B67E4CD000521FD /* SearchViewController.swift in Sources */,
 				139B690A2B67DF58000521FD /* SceneDelegate.swift in Sources */,
+				139B69272B68CFFF000521FD /* CustomTitleLabel.swift in Sources */,
 				139B69202B67EE0B000521FD /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
