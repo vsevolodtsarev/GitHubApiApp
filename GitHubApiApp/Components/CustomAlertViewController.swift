@@ -13,17 +13,18 @@ final class CustomAlertViewController: UIViewController {
     private let titleLabel = CustomTitleLabel(textAlignment: .center, fontSize: 20)
     private let messageLabel = CustomBodyLabel(textAlignment: .center)
     private let actionButton = CustomButton(backgroundColor: .systemPink, title: "Ok")
+    
     private let padding: CGFloat = 20
     
-    private var alertTitle: String?
-    private var alertMessage: String?
-    private var buttonTitle: String?
+    private let alertTitle: String?
+    private let alertMessage: String?
+    private let buttonTitle: String?
     
     init(alertTitle: String, alertMessage: String, buttonTitle: String) {
-        super.init(nibName: nil, bundle: nil)
         self.alertTitle = alertTitle
         self.alertMessage = alertMessage
         self.buttonTitle = buttonTitle
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -33,6 +34,7 @@ final class CustomAlertViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
+        
         configureContainerView()
         configureTitleLabel()
         configureMessageLabel()
