@@ -87,12 +87,12 @@ final class AlertViewController: UIViewController {
     private func configureMessageLabel() {
         containerView.addSubview(messageLabel)
         messageLabel.text = alertMessage ?? "Unable to complete request"
+        messageLabel.numberOfLines = 4
         
         NSLayoutConstraint.activate([
-            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: padding),
             messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
             messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
-            messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
         ])
     }
 }
