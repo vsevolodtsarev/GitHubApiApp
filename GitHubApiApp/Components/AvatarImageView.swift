@@ -9,7 +9,6 @@ import UIKit
 
 final class AvatarImageView: UIImageView {
     
-    private let cache = NetworkManager.shared.cache
     private let placeHolderImage = UIImage(resource: .avatarPlaceholder)
     
     override init(frame: CGRect) {
@@ -28,26 +27,16 @@ final class AvatarImageView: UIImageView {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func downloadImage(from url: URL) {
-        let cacheKey = NSString(string: "\(url)")
-        if let image = cache.object(forKey: cacheKey) {
-            self.image = image
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+    func setAvatarImage(from url: URL) {
+        NetworkManager.shared.downloadAvatarImage(from: url) { [weak self] result in
+            
             guard let self = self else { return }
-            if error != nil { return }
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
-            guard let data = data else { return }
-            guard let image = UIImage(data: data) else { return }
-            
-            cache.setObject(image, forKey: cacheKey)
-            
-            DispatchQueue.main.async {
+            switch result {
+            case .success(let image):
                 self.image = image
+            case .failure(let error):
+                assertionFailure("\(error)")
             }
         }
-        task.resume()
     }
 }
