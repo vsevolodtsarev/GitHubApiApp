@@ -10,7 +10,7 @@ import UIKit
 final class AvatarImageView: UIImageView {
     
     private let placeHolderImage = UIImage(resource: .avatarPlaceholder)
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -25,5 +25,18 @@ final class AvatarImageView: UIImageView {
         clipsToBounds = true
         image = placeHolderImage
         translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func setAvatarImage(from url: URL) {
+        NetworkManager.shared.downloadAvatarImage(from: url) { [weak self] result in
+            
+            guard let self = self else { return }
+            switch result {
+            case .success(let image):
+                self.image = image
+            case .failure(let error):
+                assertionFailure("\(error)")
+            }
+        }
     }
 }
