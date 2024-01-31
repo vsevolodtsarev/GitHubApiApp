@@ -17,6 +17,8 @@ final class FollowersListViewController: UIViewController {
     private var collectionView: UICollectionView?
     private var dataSource: UICollectionViewDiffableDataSource<Section, Follower>?
     private var followers: [Follower] = []
+    private var page: Int = 1
+    private var hasMoreFollowers: Bool = true
     
     init(username: String) {
         
@@ -32,7 +34,7 @@ final class FollowersListViewController: UIViewController {
         super.viewDidLoad()
         configureViewController()
         configureCollectionView()
-        getFollowers()
+        getFollowers(username: username, page: page)
         configureDataSource()
     }
     
@@ -51,6 +53,7 @@ final class FollowersListViewController: UIViewController {
         guard let collectionView = collectionView else { return }
         
         view.addSubview(collectionView)
+        collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
@@ -90,21 +93,37 @@ final class FollowersListViewController: UIViewController {
         }
     }
     
-    private func getFollowers() {
-        NetworkManager.shared.getFollowers(for: username, page: 1) { [weak self] result  in
+    private func getFollowers(username: String, page: Int) {
+        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result  in
             
             guard let self = self else { return }
             
             switch result {
             case .success(let followers):
-                self.followers = followers
-                self.updateData()
+                if followers.count < 100 { hasMoreFollowers = false }
+                self.followers.append(contentsOf: followers)
+                updateData()
                 
             case .failure(let error):
-                self.presentAlertViewControllerOnMainThread(alertTitle: "Bad Stuff Happened!",
+                presentAlertViewControllerOnMainThread(alertTitle: "Bad Stuff Happened!",
                                                             alertMessage: error.rawValue,
                                                             buttonTitle: "Ok")
             }
+        }
+    }
+}
+
+extension FollowersListViewController: UICollectionViewDelegate {
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY > contentHeight - height {
+            guard hasMoreFollowers else { return }
+            page += 1
+            getFollowers(username: username, page: page)
         }
     }
 }
