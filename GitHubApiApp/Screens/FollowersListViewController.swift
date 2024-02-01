@@ -17,6 +17,7 @@ final class FollowersListViewController: UIViewController {
     private var collectionView: UICollectionView?
     private var dataSource: UICollectionViewDiffableDataSource<Section, Follower>?
     private var followers: [Follower] = []
+    private var filteredFollowers: [Follower] = []
     private var page: Int = 1
     private var hasMoreFollowers: Bool = true
     
@@ -33,6 +34,7 @@ final class FollowersListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
+        configureSearchController()
         configureCollectionView()
         getFollowers(username: username, page: page)
         configureDataSource()
@@ -69,6 +71,15 @@ final class FollowersListViewController: UIViewController {
             })
     }
     
+    private func configureSearchController() {
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search for a username"
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+    }
+    
     private func createThreeColumnFlowLayout() -> UICollectionViewFlowLayout {
         let width = view.bounds.width
         let padding: CGFloat = 12
@@ -83,10 +94,11 @@ final class FollowersListViewController: UIViewController {
         return flowLayout
     }
     
-    private func updateData() {
+    private func updateData(on followers: [Follower]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
+        
         DispatchQueue.main.async {
             
             self.dataSource?.apply(snapshot, animatingDifferences: true)
@@ -112,7 +124,7 @@ final class FollowersListViewController: UIViewController {
                     }
                 }
                 
-                updateData()
+                updateData(on: followers)
                 
             case .failure(let error):
                 presentAlertViewControllerOnMainThread(alertTitle: "Bad Stuff Happened!",
@@ -135,5 +147,22 @@ extension FollowersListViewController: UICollectionViewDelegate {
             page += 1
             getFollowers(username: username, page: page)
         }
+    }
+}
+
+extension FollowersListViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+        
+        filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
+        updateData(on: filteredFollowers)
+    }
+}
+
+extension FollowersListViewController: UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        updateData(on: followers)
     }
 }
