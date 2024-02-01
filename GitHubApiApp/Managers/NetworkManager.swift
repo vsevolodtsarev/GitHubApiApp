@@ -55,6 +55,45 @@ final class NetworkManager {
         .resume()
     }
     
+    func getUserInfo(for username: String, 
+                     completion: @escaping (Result<User, NetworkError>) -> Void) {
+        let endpoint = baseURL + "/users/\(username)"
+        
+        guard let url = URL(string: endpoint) else {
+            completion(.failure(.invalidUsername))
+            return
+        }
+        
+        task.dataTask(with: url) { data, response, error in
+            
+            if let _ = error {
+                completion(.failure(.unableToComplete))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(.failure(.invalidResponse))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.invalidData))
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let user = try decoder.decode(User.self, from: data)
+                completion(.success(user))
+            } catch {
+                completion(.failure(.invalidData))
+            }
+        }
+        
+        .resume()
+    }
+    
     func downloadAvatarImage(from url: URL, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
         let cacheKey = NSString(string: "\(url)")
         if let image = cache.object(forKey: cacheKey) {

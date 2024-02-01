@@ -14,6 +14,9 @@
 		1331BDA62B69196200AD1928 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1331BDA52B69196200AD1928 /* ErrorMessage.swift */; };
 		1331BDA92B69245B00AD1928 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1331BDA82B69245B00AD1928 /* FollowerCell.swift */; };
 		1331BDAB2B6925F500AD1928 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1331BDAA2B6925F500AD1928 /* AvatarImageView.swift */; };
+		136CD43E2B6B878A006947AE /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD43D2B6B878A006947AE /* EmptyStateView.swift */; };
+		136CD4402B6B8F04006947AE /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD43F2B6B8F04006947AE /* UIColor + Extensions.swift */; };
+		136CD4422B6BE79D006947AE /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD4412B6BE79D006947AE /* UserInfoViewController.swift */; };
 		139B69082B67DF58000521FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69072B67DF58000521FD /* AppDelegate.swift */; };
 		139B690A2B67DF58000521FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69092B67DF58000521FD /* SceneDelegate.swift */; };
 		139B690C2B67DF58000521FD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B690B2B67DF58000521FD /* FavoritesViewController.swift */; };
@@ -36,6 +39,9 @@
 		1331BDA52B69196200AD1928 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		1331BDA82B69245B00AD1928 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		1331BDAA2B6925F500AD1928 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
+		136CD43D2B6B878A006947AE /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		136CD43F2B6B8F04006947AE /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
+		136CD4412B6BE79D006947AE /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		139B69042B67DF58000521FD /* GitHubApiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		139B69072B67DF58000521FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		139B69092B67DF58000521FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +102,16 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		136CD43C2B6B86D3006947AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */,
+				1331BDAA2B6925F500AD1928 /* AvatarImageView.swift */,
+				136CD43D2B6B878A006947AE /* EmptyStateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		139B68FB2B67DF58000521FD = {
 			isa = PBXGroup;
 			children = (
@@ -149,13 +165,12 @@
 		139B69232B680E3F000521FD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				136CD43C2B6B86D3006947AE /* Views */,
 				1331BDA72B69241900AD1928 /* Cells */,
-				139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */,
 				139B69212B67F592000521FD /* CustomTextField.swift */,
 				139B691F2B67EE0B000521FD /* CustomButton.swift */,
 				139B69262B68CFFF000521FD /* CustomTitleLabel.swift */,
 				139B69282B68D314000521FD /* CustomBodyLabel.swift */,
-				1331BDAA2B6925F500AD1928 /* AvatarImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -166,6 +181,7 @@
 				139B690B2B67DF58000521FD /* FavoritesViewController.swift */,
 				139B691D2B67E4CD000521FD /* SearchViewController.swift */,
 				139B69242B681C82000521FD /* FollowersListViewController.swift */,
+				136CD4412B6BE79D006947AE /* UserInfoViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -174,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				1331BD9A2B68E2BF00AD1928 /* UIViewController + Extensions.swift */,
+				136CD43F2B6B8F04006947AE /* UIColor + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -248,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				136CD43E2B6B878A006947AE /* EmptyStateView.swift in Sources */,
 				1331BDA02B68F48900AD1928 /* User.swift in Sources */,
 				139B690C2B67DF58000521FD /* FavoritesViewController.swift in Sources */,
 				139B69082B67DF58000521FD /* AppDelegate.swift in Sources */,
@@ -255,6 +273,7 @@
 				139B692B2B68D4FB000521FD /* CustomAlertViewController.swift in Sources */,
 				139B69222B67F592000521FD /* CustomTextField.swift in Sources */,
 				139B69252B681C82000521FD /* FollowersListViewController.swift in Sources */,
+				136CD4402B6B8F04006947AE /* UIColor + Extensions.swift in Sources */,
 				1331BDA92B69245B00AD1928 /* FollowerCell.swift in Sources */,
 				139B691E2B67E4CD000521FD /* SearchViewController.swift in Sources */,
 				1331BD9E2B68F36700AD1928 /* Follower.swift in Sources */,
@@ -263,6 +282,7 @@
 				139B690A2B67DF58000521FD /* SceneDelegate.swift in Sources */,
 				139B69272B68CFFF000521FD /* CustomTitleLabel.swift in Sources */,
 				1331BDA62B69196200AD1928 /* ErrorMessage.swift in Sources */,
+				136CD4422B6BE79D006947AE /* UserInfoViewController.swift in Sources */,
 				1331BDAB2B6925F500AD1928 /* AvatarImageView.swift in Sources */,
 				139B69202B67EE0B000521FD /* CustomButton.swift in Sources */,
 			);

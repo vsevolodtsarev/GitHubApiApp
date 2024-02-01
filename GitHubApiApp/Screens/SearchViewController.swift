@@ -11,7 +11,9 @@ final class SearchViewController: UIViewController {
     
     private let logoImageView = UIImageView()
     private let usernameTextField = CustomTextField()
-    private let getFollowersButton = CustomButton(backgroundColor: .systemGreen, title: "Get Followers")
+    private let getFollowersButton = CustomButton(backgroundColor: .dynamicButtonColor,
+                                                  title: "Get Followers",
+                                                  titleColor: .dynamicButtonTextColor)
     private var isUsernameEntered: Bool {
         guard let textfield = usernameTextField.text else { return false }
         return !textfield.isEmpty
@@ -54,13 +56,13 @@ final class SearchViewController: UIViewController {
     private func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = .ghLogo
+        logoImageView.image = .gitHubLogo
         
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.heightAnchor.constraint(equalToConstant: 200),
-            logoImageView.widthAnchor.constraint(equalToConstant: 200)
+            logoImageView.heightAnchor.constraint(equalToConstant: 150),
+            logoImageView.widthAnchor.constraint(equalToConstant: 350)
         ])
     }
     
