@@ -12,7 +12,7 @@ final class CustomAlertViewController: UIViewController {
     private let containerView = UIView()
     private let titleLabel = CustomTitleLabel(textAlignment: .center, fontSize: 20)
     private let messageLabel = CustomBodyLabel(textAlignment: .center)
-    private let actionButton = CustomButton(backgroundColor: .systemPink, title: "Ok")
+    private let actionButton = CustomButton(backgroundColor: .systemPink, title: "Ok", titleColor: .white)
     
     private let padding: CGFloat = 20
     

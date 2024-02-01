@@ -11,7 +11,9 @@ final class SearchViewController: UIViewController {
     
     private let logoImageView = UIImageView()
     private let usernameTextField = CustomTextField()
-    private let getFollowersButton = CustomButton(backgroundColor: .systemGreen, title: "Get Followers")
+    private let getFollowersButton = CustomButton(backgroundColor: .dynamicButtonColor,
+                                                  title: "Get Followers",
+                                                  titleColor: .dynamicButtonTextColor)
     private var isUsernameEntered: Bool {
         guard let textfield = usernameTextField.text else { return false }
         return !textfield.isEmpty
