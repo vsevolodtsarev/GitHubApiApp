@@ -20,6 +20,7 @@ final class FollowersListViewController: UIViewController {
     private var filteredFollowers: [Follower] = []
     private var page: Int = 1
     private var hasMoreFollowers: Bool = true
+    private var isSearching: Bool = false
     
     init(username: String) {
         
@@ -137,6 +138,14 @@ final class FollowersListViewController: UIViewController {
 
 extension FollowersListViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let activeArray = isSearching ? filteredFollowers : followers
+        let follower = activeArray[indexPath.item]
+        
+        let destinationViewController = UserInfoViewController()
+        present(destinationViewController, animated: true)
+    }
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
@@ -155,6 +164,7 @@ extension FollowersListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
         
+        isSearching = true
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
         updateData(on: filteredFollowers)
     }
@@ -163,6 +173,7 @@ extension FollowersListViewController: UISearchResultsUpdating {
 extension FollowersListViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
         updateData(on: followers)
     }
 }

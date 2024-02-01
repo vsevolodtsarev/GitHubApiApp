@@ -16,6 +16,7 @@
 		1331BDAB2B6925F500AD1928 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1331BDAA2B6925F500AD1928 /* AvatarImageView.swift */; };
 		136CD43E2B6B878A006947AE /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD43D2B6B878A006947AE /* EmptyStateView.swift */; };
 		136CD4402B6B8F04006947AE /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD43F2B6B8F04006947AE /* UIColor + Extensions.swift */; };
+		136CD4422B6BE79D006947AE /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD4412B6BE79D006947AE /* UserInfoViewController.swift */; };
 		139B69082B67DF58000521FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69072B67DF58000521FD /* AppDelegate.swift */; };
 		139B690A2B67DF58000521FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69092B67DF58000521FD /* SceneDelegate.swift */; };
 		139B690C2B67DF58000521FD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B690B2B67DF58000521FD /* FavoritesViewController.swift */; };
@@ -40,6 +41,7 @@
 		1331BDAA2B6925F500AD1928 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		136CD43D2B6B878A006947AE /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		136CD43F2B6B8F04006947AE /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
+		136CD4412B6BE79D006947AE /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		139B69042B67DF58000521FD /* GitHubApiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		139B69072B67DF58000521FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		139B69092B67DF58000521FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				139B690B2B67DF58000521FD /* FavoritesViewController.swift */,
 				139B691D2B67E4CD000521FD /* SearchViewController.swift */,
 				139B69242B681C82000521FD /* FollowersListViewController.swift */,
+				136CD4412B6BE79D006947AE /* UserInfoViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				139B690A2B67DF58000521FD /* SceneDelegate.swift in Sources */,
 				139B69272B68CFFF000521FD /* CustomTitleLabel.swift in Sources */,
 				1331BDA62B69196200AD1928 /* ErrorMessage.swift in Sources */,
+				136CD4422B6BE79D006947AE /* UserInfoViewController.swift in Sources */,
 				1331BDAB2B6925F500AD1928 /* AvatarImageView.swift in Sources */,
 				139B69202B67EE0B000521FD /* CustomButton.swift in Sources */,
 			);
