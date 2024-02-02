@@ -17,6 +17,8 @@
 		136CD43E2B6B878A006947AE /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD43D2B6B878A006947AE /* EmptyStateView.swift */; };
 		136CD4402B6B8F04006947AE /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD43F2B6B8F04006947AE /* UIColor + Extensions.swift */; };
 		136CD4422B6BE79D006947AE /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD4412B6BE79D006947AE /* UserInfoViewController.swift */; };
+		136CD4442B6CA539006947AE /* UserInfoHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD4432B6CA539006947AE /* UserInfoHeaderViewController.swift */; };
+		136CD4462B6CA5E4006947AE /* CustomSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD4452B6CA5E4006947AE /* CustomSecondaryTitleLabel.swift */; };
 		139B69082B67DF58000521FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69072B67DF58000521FD /* AppDelegate.swift */; };
 		139B690A2B67DF58000521FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69092B67DF58000521FD /* SceneDelegate.swift */; };
 		139B690C2B67DF58000521FD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B690B2B67DF58000521FD /* FavoritesViewController.swift */; };
@@ -42,6 +44,8 @@
 		136CD43D2B6B878A006947AE /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		136CD43F2B6B8F04006947AE /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 		136CD4412B6BE79D006947AE /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		136CD4432B6CA539006947AE /* UserInfoHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeaderViewController.swift; sourceTree = "<group>"; };
+		136CD4452B6CA5E4006947AE /* CustomSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		139B69042B67DF58000521FD /* GitHubApiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		139B69072B67DF58000521FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		139B69092B67DF58000521FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */,
 				1331BDAA2B6925F500AD1928 /* AvatarImageView.swift */,
 				136CD43D2B6B878A006947AE /* EmptyStateView.swift */,
+				136CD4432B6CA539006947AE /* UserInfoHeaderViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 				139B69212B67F592000521FD /* CustomTextField.swift */,
 				139B691F2B67EE0B000521FD /* CustomButton.swift */,
 				139B69262B68CFFF000521FD /* CustomTitleLabel.swift */,
+				136CD4452B6CA5E4006947AE /* CustomSecondaryTitleLabel.swift */,
 				139B69282B68D314000521FD /* CustomBodyLabel.swift */,
 			);
 			path = Components;
@@ -272,6 +278,7 @@
 				139B69292B68D314000521FD /* CustomBodyLabel.swift in Sources */,
 				139B692B2B68D4FB000521FD /* CustomAlertViewController.swift in Sources */,
 				139B69222B67F592000521FD /* CustomTextField.swift in Sources */,
+				136CD4462B6CA5E4006947AE /* CustomSecondaryTitleLabel.swift in Sources */,
 				139B69252B681C82000521FD /* FollowersListViewController.swift in Sources */,
 				136CD4402B6B8F04006947AE /* UIColor + Extensions.swift in Sources */,
 				1331BDA92B69245B00AD1928 /* FollowerCell.swift in Sources */,
@@ -285,6 +292,7 @@
 				136CD4422B6BE79D006947AE /* UserInfoViewController.swift in Sources */,
 				1331BDAB2B6925F500AD1928 /* AvatarImageView.swift in Sources */,
 				139B69202B67EE0B000521FD /* CustomButton.swift in Sources */,
+				136CD4442B6CA539006947AE /* UserInfoHeaderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
