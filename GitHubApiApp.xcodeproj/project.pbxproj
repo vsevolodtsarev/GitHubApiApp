@@ -20,6 +20,7 @@
 		136CD4442B6CA539006947AE /* UserInfoHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD4432B6CA539006947AE /* UserInfoHeaderViewController.swift */; };
 		136CD4462B6CA5E4006947AE /* CustomSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD4452B6CA5E4006947AE /* CustomSecondaryTitleLabel.swift */; };
 		136CD45B2B6EAFD2006947AE /* ItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD45A2B6EAFD2006947AE /* ItemInfoView.swift */; };
+		136CD45D2B6F8825006947AE /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD45C2B6F8825006947AE /* ItemInfoViewController.swift */; };
 		139B69082B67DF58000521FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69072B67DF58000521FD /* AppDelegate.swift */; };
 		139B690A2B67DF58000521FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69092B67DF58000521FD /* SceneDelegate.swift */; };
 		139B690C2B67DF58000521FD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B690B2B67DF58000521FD /* FavoritesViewController.swift */; };
@@ -48,6 +49,7 @@
 		136CD4432B6CA539006947AE /* UserInfoHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeaderViewController.swift; sourceTree = "<group>"; };
 		136CD4452B6CA5E4006947AE /* CustomSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		136CD45A2B6EAFD2006947AE /* ItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoView.swift; sourceTree = "<group>"; };
+		136CD45C2B6F8825006947AE /* ItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
 		139B69042B67DF58000521FD /* GitHubApiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		139B69072B67DF58000521FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		139B69092B67DF58000521FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				136CD43D2B6B878A006947AE /* EmptyStateView.swift */,
 				136CD4432B6CA539006947AE /* UserInfoHeaderViewController.swift */,
 				136CD45A2B6EAFD2006947AE /* ItemInfoView.swift */,
+				136CD45C2B6F8825006947AE /* ItemInfoViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				136CD43E2B6B878A006947AE /* EmptyStateView.swift in Sources */,
+				136CD45D2B6F8825006947AE /* ItemInfoViewController.swift in Sources */,
 				1331BDA02B68F48900AD1928 /* User.swift in Sources */,
 				139B690C2B67DF58000521FD /* FavoritesViewController.swift in Sources */,
 				139B69082B67DF58000521FD /* AppDelegate.swift in Sources */,
