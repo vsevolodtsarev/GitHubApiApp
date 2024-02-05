@@ -40,7 +40,11 @@ final class UserInfoViewController: UIViewController {
             case .success(let user):
                 DispatchQueue.main.async {
                     let userInfoHeaderViewController = UserInfoHeaderViewController(user: user)
+                    let repoItemViewController = RepoItemViewController(user: user)
+                    let followerItemViewController = FollowerItemViewController(user: user)
                     self.addChildViewController(add: userInfoHeaderViewController, to: self.headerView)
+                    self.addChildViewController(add: repoItemViewController, to: self.itemViewOne)
+                    self.addChildViewController(add: followerItemViewController, to: self.itemViewTwo)
                 }
                 
             case .failure(let error):
@@ -71,8 +75,6 @@ final class UserInfoViewController: UIViewController {
         view.addSubview(itemViewOne)
         view.addSubview(itemViewTwo)
         
-        itemViewOne.backgroundColor = .systemPink
-        itemViewTwo.backgroundColor = .systemPink
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
         itemViewOne.translatesAutoresizingMaskIntoConstraints = false
