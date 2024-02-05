@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import SafariServices
 
 fileprivate var containerView: UIView?
 
 extension UIViewController {
+    
+    func presentSafariViewController(with url: URL) {
+        let safariViewController = SFSafariViewController(url: url)
+        safariViewController.preferredControlTintColor = .dynamicButtonColor
+        present(safariViewController, animated: true)
+    }
     
     func presentAlertViewControllerOnMainThread(alertTitle: String,
                                                 alertMessage: String,

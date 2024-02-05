@@ -7,13 +7,21 @@
 
 import UIKit
 
+protocol UserInfoViewControllerDelegate: AnyObject {
+    func didTapGitHubProfile(for user: User)
+    func didTapGetFollowers(for user: User)
+}
+
 final class UserInfoViewController: UIViewController {
     
     private let headerView = UIView()
     private let itemViewOne = UIView()
     private let itemViewTwo = UIView()
+    private let dateLabel = CustomBodyLabel(textAlignment: .center)
     
     private let username: String
+    
+    weak var delegate: FollowerListViewControllerDelegate?
     
     init(username: String) {
         self.username = username
@@ -39,8 +47,7 @@ final class UserInfoViewController: UIViewController {
             switch result {
             case .success(let user):
                 DispatchQueue.main.async {
-                    let userInfoHeaderViewController = UserInfoHeaderViewController(user: user)
-                    self.addChildViewController(add: userInfoHeaderViewController, to: self.headerView)
+                    self.configureUIElements(with: user)
                 }
                 
             case .failure(let error):
@@ -51,6 +58,20 @@ final class UserInfoViewController: UIViewController {
     
     @objc private func dismissViewController() {
         dismiss(animated: true)
+    }
+    
+    private func configureUIElements(with user: User) {
+        let userInfoHeaderViewController = UserInfoHeaderViewController(user: user)
+        let repoItemViewController = RepoItemViewController(user: user)
+        let followerItemViewController = FollowerItemViewController(user: user)
+        
+        repoItemViewController.delegate = self
+        followerItemViewController.delegate = self
+        
+        addChildViewController(add: userInfoHeaderViewController, to: headerView)
+        addChildViewController(add: repoItemViewController, to: itemViewOne)
+        addChildViewController(add: followerItemViewController, to: itemViewTwo)
+        dateLabel.text = "GitHub since \(user.createdAt.convertToMonthYearFormat())"
     }
     
     private func configureViewController() {
@@ -70,13 +91,13 @@ final class UserInfoViewController: UIViewController {
         view.addSubview(headerView)
         view.addSubview(itemViewOne)
         view.addSubview(itemViewTwo)
+        view.addSubview(dateLabel)
         
-        itemViewOne.backgroundColor = .systemPink
-        itemViewTwo.backgroundColor = .systemPink
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
         itemViewOne.translatesAutoresizingMaskIntoConstraints = false
         itemViewTwo.translatesAutoresizingMaskIntoConstraints = false
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let padding: CGFloat = 20
         let itemHeight: CGFloat = 140
@@ -95,7 +116,29 @@ final class UserInfoViewController: UIViewController {
             itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
             itemViewTwo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             itemViewTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight)
+            itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
+            
+            dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
+            dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            dateLabel.heightAnchor.constraint(equalToConstant: 18)
         ])
+    }
+}
+
+extension UserInfoViewController: UserInfoViewControllerDelegate {
+    func didTapGitHubProfile(for user: User) {
+        presentSafariViewController(with: user.htmlUrl)
+    }
+    
+    func didTapGetFollowers(for user: User) {
+        guard user.followers != 0 else {
+            presentAlertViewControllerOnMainThread(alertTitle: "No followers",
+                                                   alertMessage: "This user has no followers 😔.",
+                                                   buttonTitle: "So sad")
+            return
+        }
+        delegate?.didRequestFollowers(for: user.login)
+        dismissViewController()
     }
 }
