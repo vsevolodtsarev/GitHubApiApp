@@ -23,6 +23,7 @@
 		136CD45D2B6F8825006947AE /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD45C2B6F8825006947AE /* ItemInfoViewController.swift */; };
 		136CD45F2B70C143006947AE /* RepoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD45E2B70C143006947AE /* RepoItemViewController.swift */; };
 		136CD4612B70C4D3006947AE /* FollowerItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD4602B70C4D3006947AE /* FollowerItemViewController.swift */; };
+		136CD4642B70CB7D006947AE /* Date + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD4632B70CB7D006947AE /* Date + Extensions.swift */; };
 		139B69082B67DF58000521FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69072B67DF58000521FD /* AppDelegate.swift */; };
 		139B690A2B67DF58000521FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69092B67DF58000521FD /* SceneDelegate.swift */; };
 		139B690C2B67DF58000521FD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B690B2B67DF58000521FD /* FavoritesViewController.swift */; };
@@ -54,6 +55,7 @@
 		136CD45C2B6F8825006947AE /* ItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
 		136CD45E2B70C143006947AE /* RepoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItemViewController.swift; sourceTree = "<group>"; };
 		136CD4602B70C4D3006947AE /* FollowerItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerItemViewController.swift; sourceTree = "<group>"; };
+		136CD4632B70CB7D006947AE /* Date + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extensions.swift"; sourceTree = "<group>"; };
 		139B69042B67DF58000521FD /* GitHubApiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		139B69072B67DF58000521FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		139B69092B67DF58000521FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				1331BD9A2B68E2BF00AD1928 /* UIViewController + Extensions.swift */,
 				136CD43F2B6B8F04006947AE /* UIColor + Extensions.swift */,
+				136CD4632B70CB7D006947AE /* Date + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				139B69222B67F592000521FD /* CustomTextField.swift in Sources */,
 				136CD4462B6CA5E4006947AE /* CustomSecondaryTitleLabel.swift in Sources */,
 				139B69252B681C82000521FD /* FollowersListViewController.swift in Sources */,
+				136CD4642B70CB7D006947AE /* Date + Extensions.swift in Sources */,
 				136CD4402B6B8F04006947AE /* UIColor + Extensions.swift in Sources */,
 				1331BDA92B69245B00AD1928 /* FollowerCell.swift in Sources */,
 				139B691E2B67E4CD000521FD /* SearchViewController.swift in Sources */,
