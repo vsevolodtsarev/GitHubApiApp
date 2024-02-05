@@ -9,6 +9,8 @@ import UIKit
 
 class ItemInfoViewController: UIViewController {
     
+    weak var delegate: UserInfoViewControllerDelegate?
+    
     private let stackView = UIStackView()
     let itemInfoViewOne = ItemInfoView()
     let itemInfoViewTwo = ItemInfoView()
@@ -30,6 +32,13 @@ class ItemInfoViewController: UIViewController {
         configureBackgroundView()
         configureStackView()
         layoutUI()
+        configureActionButton()
+    }
+    
+    @objc func didTapButton() {}
+    
+    private func configureActionButton() {
+        actionButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
     
     private func configureBackgroundView() {
