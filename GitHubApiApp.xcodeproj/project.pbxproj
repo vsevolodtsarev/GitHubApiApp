@@ -11,7 +11,7 @@
 		1331BD9E2B68F36700AD1928 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1331BD9D2B68F36700AD1928 /* Follower.swift */; };
 		1331BDA02B68F48900AD1928 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1331BD9F2B68F48900AD1928 /* User.swift */; };
 		1331BDA32B69075D00AD1928 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1331BDA22B69075D00AD1928 /* NetworkManager.swift */; };
-		1331BDA62B69196200AD1928 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1331BDA52B69196200AD1928 /* ErrorMessage.swift */; };
+		1331BDA62B69196200AD1928 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1331BDA52B69196200AD1928 /* Errors.swift */; };
 		1331BDA92B69245B00AD1928 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1331BDA82B69245B00AD1928 /* FollowerCell.swift */; };
 		1331BDAB2B6925F500AD1928 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1331BDAA2B6925F500AD1928 /* AvatarImageView.swift */; };
 		136CD43E2B6B878A006947AE /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD43D2B6B878A006947AE /* EmptyStateView.swift */; };
@@ -36,6 +36,7 @@
 		139B69272B68CFFF000521FD /* CustomTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69262B68CFFF000521FD /* CustomTitleLabel.swift */; };
 		139B69292B68D314000521FD /* CustomBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69282B68D314000521FD /* CustomBodyLabel.swift */; };
 		139B692B2B68D4FB000521FD /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */; };
+		13F33DA42B721AB9004CDA50 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F33DA32B721AB9004CDA50 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +44,7 @@
 		1331BD9D2B68F36700AD1928 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		1331BD9F2B68F48900AD1928 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1331BDA22B69075D00AD1928 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		1331BDA52B69196200AD1928 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		1331BDA52B69196200AD1928 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		1331BDA82B69245B00AD1928 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		1331BDAA2B6925F500AD1928 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		136CD43D2B6B878A006947AE /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		139B69262B68CFFF000521FD /* CustomTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleLabel.swift; sourceTree = "<group>"; };
 		139B69282B68D314000521FD /* CustomBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBodyLabel.swift; sourceTree = "<group>"; };
 		139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		13F33DA32B721AB9004CDA50 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				1331BDA22B69075D00AD1928 /* NetworkManager.swift */,
+				13F33DA32B721AB9004CDA50 /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -103,7 +106,7 @@
 		1331BDA42B69193D00AD1928 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				1331BDA52B69196200AD1928 /* ErrorMessage.swift */,
+				1331BDA52B69196200AD1928 /* Errors.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -309,12 +312,13 @@
 				1331BDA92B69245B00AD1928 /* FollowerCell.swift in Sources */,
 				139B691E2B67E4CD000521FD /* SearchViewController.swift in Sources */,
 				1331BD9E2B68F36700AD1928 /* Follower.swift in Sources */,
+				13F33DA42B721AB9004CDA50 /* PersistenceManager.swift in Sources */,
 				1331BD9B2B68E2BF00AD1928 /* UIViewController + Extensions.swift in Sources */,
 				136CD45B2B6EAFD2006947AE /* ItemInfoView.swift in Sources */,
 				1331BDA32B69075D00AD1928 /* NetworkManager.swift in Sources */,
 				139B690A2B67DF58000521FD /* SceneDelegate.swift in Sources */,
 				139B69272B68CFFF000521FD /* CustomTitleLabel.swift in Sources */,
-				1331BDA62B69196200AD1928 /* ErrorMessage.swift in Sources */,
+				1331BDA62B69196200AD1928 /* Errors.swift in Sources */,
 				136CD4422B6BE79D006947AE /* UserInfoViewController.swift in Sources */,
 				1331BDAB2B6925F500AD1928 /* AvatarImageView.swift in Sources */,
 				136CD4612B70C4D3006947AE /* FollowerItemViewController.swift in Sources */,
