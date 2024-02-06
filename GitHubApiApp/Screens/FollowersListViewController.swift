@@ -50,9 +50,16 @@ final class FollowersListViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    @objc private func didTapAddButton() {
+        
+    }
+    
     private func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton))
+        navigationItem.rightBarButtonItem = addButton
     }
     
     private func configureCollectionView() {
