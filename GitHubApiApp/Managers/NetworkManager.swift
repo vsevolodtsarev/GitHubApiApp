@@ -17,7 +17,7 @@ final class NetworkManager {
     
     func getFollowers(for username: String,
                       page: Int,
-                      completion: @escaping (Result<[Follower], NetworkError>) -> Void) {
+                      completion: @escaping (Result<[Follower], Errors>) -> Void) {
         let endpoint = baseURL + "/users/\(username)/followers?per_page=100&page=\(page)"
         
         guard let url = URL(string: endpoint) else {
@@ -56,7 +56,7 @@ final class NetworkManager {
     }
     
     func getUserInfo(for username: String, 
-                     completion: @escaping (Result<User, NetworkError>) -> Void) {
+                     completion: @escaping (Result<User, Errors>) -> Void) {
         let endpoint = baseURL + "/users/\(username)"
         
         guard let url = URL(string: endpoint) else {
@@ -94,7 +94,7 @@ final class NetworkManager {
         .resume()
     }
     
-    func downloadAvatarImage(from url: URL, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
+    func downloadAvatarImage(from url: URL, completion: @escaping (Result<UIImage, Errors>) -> Void) {
         let cacheKey = NSString(string: "\(url)")
         if let image = cache.object(forKey: cacheKey) {
             completion(.success(image))
