@@ -127,10 +127,8 @@
 		136CD43C2B6B86D3006947AE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				13E10F912B73F795004EF8E0 /* TabBarControllers */,
 				13E10F902B7352A0004EF8E0 /* Custom Views */,
 				1331BDA72B69241900AD1928 /* Cells */,
-				136CD4622B70C593006947AE /* ItemInfoViewControllers */,
 				1331BDAA2B6925F500AD1928 /* AvatarImageView.swift */,
 				136CD43D2B6B878A006947AE /* EmptyStateView.swift */,
 				136CD4432B6CA539006947AE /* UserInfoHeaderViewController.swift */,
@@ -202,6 +200,8 @@
 		139B69232B680E3F000521FD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				136CD4622B70C593006947AE /* ItemInfoViewControllers */,
+				13E10F912B73F795004EF8E0 /* TabBarControllers */,
 				136CD43C2B6B86D3006947AE /* Views */,
 			);
 			path = Components;
