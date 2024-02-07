@@ -51,7 +51,38 @@ final class FollowersListViewController: UIViewController {
     }
     
     @objc private func didTapAddButton() {
+        showLoadingView()
         
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
+            guard let self = self else { return }
+            
+            dismissLoadingView()
+            
+            switch result {
+            case .success(let user):
+                let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+                
+                PersistenceManager.updateWith(favorite: favorite,
+                                              actionType: .add) { error in
+                    guard let error = error else {
+                        self.presentAlertViewControllerOnMainThread(alertTitle: "Success!",
+                                                               alertMessage: "You have successfully favorited this user🎉",
+                                                               buttonTitle: "Ok")
+                        return
+                    }
+                    
+                    self.presentAlertViewControllerOnMainThread(alertTitle: "Something went wrong",
+                                                           alertMessage: error.rawValue,
+                                                           buttonTitle: "Ok")
+                }
+                
+                
+            case .failure(let error):
+                presentAlertViewControllerOnMainThread(alertTitle: "Something went wrong",
+                                                       alertMessage: error.rawValue,
+                                                       buttonTitle: "Ok")
+            }
+        }
     }
     
     private func configureViewController() {

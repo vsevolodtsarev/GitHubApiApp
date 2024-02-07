@@ -36,6 +36,7 @@
 		139B69272B68CFFF000521FD /* CustomTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69262B68CFFF000521FD /* CustomTitleLabel.swift */; };
 		139B69292B68D314000521FD /* CustomBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69282B68D314000521FD /* CustomBodyLabel.swift */; };
 		139B692B2B68D4FB000521FD /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */; };
+		13E10F8F2B73525E004EF8E0 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E10F8E2B73525E004EF8E0 /* FavoritesCell.swift */; };
 		13F33DA42B721AB9004CDA50 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F33DA32B721AB9004CDA50 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		139B69262B68CFFF000521FD /* CustomTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleLabel.swift; sourceTree = "<group>"; };
 		139B69282B68D314000521FD /* CustomBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBodyLabel.swift; sourceTree = "<group>"; };
 		139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		13E10F8E2B73525E004EF8E0 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		13F33DA32B721AB9004CDA50 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				1331BDA82B69245B00AD1928 /* FollowerCell.swift */,
+				13E10F8E2B73525E004EF8E0 /* FavoritesCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -122,8 +125,9 @@
 		136CD43C2B6B86D3006947AE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				13E10F902B7352A0004EF8E0 /* Custom Views */,
+				1331BDA72B69241900AD1928 /* Cells */,
 				136CD4622B70C593006947AE /* ItemInfoViewControllers */,
-				139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */,
 				1331BDAA2B6925F500AD1928 /* AvatarImageView.swift */,
 				136CD43D2B6B878A006947AE /* EmptyStateView.swift */,
 				136CD4432B6CA539006947AE /* UserInfoHeaderViewController.swift */,
@@ -196,12 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				136CD43C2B6B86D3006947AE /* Views */,
-				1331BDA72B69241900AD1928 /* Cells */,
-				139B69212B67F592000521FD /* CustomTextField.swift */,
-				139B691F2B67EE0B000521FD /* CustomButton.swift */,
-				139B69262B68CFFF000521FD /* CustomTitleLabel.swift */,
-				136CD4452B6CA5E4006947AE /* CustomSecondaryTitleLabel.swift */,
-				139B69282B68D314000521FD /* CustomBodyLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -225,6 +223,19 @@
 				136CD4632B70CB7D006947AE /* Date + Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		13E10F902B7352A0004EF8E0 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				139B69212B67F592000521FD /* CustomTextField.swift */,
+				139B691F2B67EE0B000521FD /* CustomButton.swift */,
+				139B69262B68CFFF000521FD /* CustomTitleLabel.swift */,
+				136CD4452B6CA5E4006947AE /* CustomSecondaryTitleLabel.swift */,
+				139B69282B68D314000521FD /* CustomBodyLabel.swift */,
+				139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +314,7 @@
 				139B690C2B67DF58000521FD /* FavoritesViewController.swift in Sources */,
 				139B69082B67DF58000521FD /* AppDelegate.swift in Sources */,
 				139B69292B68D314000521FD /* CustomBodyLabel.swift in Sources */,
+				13E10F8F2B73525E004EF8E0 /* FavoritesCell.swift in Sources */,
 				139B692B2B68D4FB000521FD /* CustomAlertViewController.swift in Sources */,
 				139B69222B67F592000521FD /* CustomTextField.swift in Sources */,
 				136CD4462B6CA5E4006947AE /* CustomSecondaryTitleLabel.swift in Sources */,
