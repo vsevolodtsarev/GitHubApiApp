@@ -27,9 +27,9 @@ final class FollowersListViewController: UIViewController {
     private var isSearching: Bool = false
     
     init(username: String) {
-        
         self.username = username
         super.init(nibName: nil, bundle: nil)
+        title = username
     }
     
     required init?(coder: NSCoder) {
