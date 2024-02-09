@@ -322,7 +322,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Местоположение не указано"
+            "value" : "Локация не указана"
           }
         }
       }

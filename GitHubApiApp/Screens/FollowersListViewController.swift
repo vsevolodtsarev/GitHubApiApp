@@ -66,20 +66,20 @@ final class FollowersListViewController: UIViewController {
                 PersistenceManager.updateWith(favorite: favorite,
                                               actionType: .add) { error in
                     guard let error = error else {
-                        self.presentAlertViewControllerOnMainThread(alertTitle: NSLocalizedString("success", comment: "Success!"),
-                                                               alertMessage: NSLocalizedString("addFavorite", comment: "addFavorite"),
+                        self.presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.success,
+                                                                    alertMessage: LocalizedStrings.addFavorite,
                                                                buttonTitle: "Ok")
                         return
                     }
                     
-                    self.presentAlertViewControllerOnMainThread(alertTitle: NSLocalizedString("wrong", comment: "Something went wrong"),
+                    self.presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
                                                                 alertMessage: error.localizedDescription,
                                                            buttonTitle: "Ok")
                 }
                 
                 
             case .failure(let error):
-                presentAlertViewControllerOnMainThread(alertTitle: NSLocalizedString("wrong", comment: "Something went wrong"),
+                presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
                                                        alertMessage: error.localizedDescription,
                                                        buttonTitle: "Ok")
             }
@@ -118,7 +118,7 @@ final class FollowersListViewController: UIViewController {
     private func configureSearchController() {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = NSLocalizedString("search", comment: "Search for a username")
+        searchController.searchBar.placeholder = LocalizedStrings.searchUsername
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
     }
@@ -162,7 +162,7 @@ final class FollowersListViewController: UIViewController {
                 self.followers.append(contentsOf: followers)
                 
                 if followers.isEmpty {
-                    let message = NSLocalizedString("noFollowers", comment: "no followers")
+                    let message = LocalizedStrings.noFollowers
                     DispatchQueue.main.async {
                         self.showEmptyStateView(with: message, in: self.view)
                         return
@@ -172,7 +172,7 @@ final class FollowersListViewController: UIViewController {
                 updateData(on: followers)
                 
             case .failure(let error):
-                presentAlertViewControllerOnMainThread(alertTitle: NSLocalizedString("badStuff", comment: "bad stuff"),
+                presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.badStuff,
                                                        alertMessage: error.localizedDescription,
                                                        buttonTitle: "Ok")
             }
