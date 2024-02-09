@@ -18,3 +18,8 @@ enum SFSymbolsImage {
     static let followers = UIImage(systemName: "heart")
     static let following = UIImage(systemName: "person.2")
 }
+
+enum LocalizedStrings {
+    static let searchTab = NSLocalizedString("searchTab", comment: "search tab")
+    static let favoritesTab = NSLocalizedString("favoritesTab", comment: "favorites tab")
+}
