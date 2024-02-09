@@ -26,7 +26,7 @@ final class FavoritesViewController: UIViewController {
     private func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Favorites"
+        title = LocalizedStrings.favorites
     }
     
     private func configureTableView() {
@@ -46,7 +46,7 @@ final class FavoritesViewController: UIViewController {
             switch result {
             case .success(let favorites):
                 if favorites.isEmpty {
-                    showEmptyStateView(with: "No favorites?\nAdd one on the follower screen.", in: view)
+                    showEmptyStateView(with: LocalizedStrings.noFavorites, in: view)
                 } else {
                     self.favorites = favorites
                     DispatchQueue.main.async {
@@ -56,8 +56,8 @@ final class FavoritesViewController: UIViewController {
                 }
             
             case .failure(let error):
-                presentAlertViewControllerOnMainThread(alertTitle: "Something went wrong",
-                                                       alertMessage: error.rawValue,
+                presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
+                                                       alertMessage: error.localizedDescription,
                                                        buttonTitle: "Ok")
             }
         }
@@ -79,7 +79,7 @@ extension FavoritesViewController: UITableViewDelegate {
         tableView.deleteRows(at: [indexPath], with: .left)
         
         if favorites.isEmpty {
-            showEmptyStateView(with: "No favorites?\nAdd one on the follower screen.", in: view)
+            showEmptyStateView(with: LocalizedStrings.noFavorites, in: view)
         }
         
         PersistenceManager.updateWith(favorite: favorite,
@@ -87,8 +87,8 @@ extension FavoritesViewController: UITableViewDelegate {
             guard let self = self else { return }
             guard let error = error else { return }
             
-            presentAlertViewControllerOnMainThread(alertTitle: "Unable to remove",
-                                                   alertMessage: error.rawValue,
+            presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.noRemove,
+                                                   alertMessage: error.localizedDescription,
                                                    buttonTitle: "Ok")
         }
     }

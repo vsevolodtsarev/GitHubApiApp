@@ -72,7 +72,7 @@
         }
       }
     },
-    "favoritesTab" : {
+    "favorites" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -208,6 +208,23 @@
         }
       }
     },
+    "noFavorites" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No favorites?               Add one on the follower screen."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нет избранных?              Добавьте кого-нибудь!"
+          }
+        }
+      }
+    },
     "noFollowers" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -238,6 +255,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Местоположение не указано"
+          }
+        }
+      }
+    },
+    "noRemove" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to remove"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Невозможно удалить"
           }
         }
       }
@@ -282,23 +316,6 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Search for a username"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поиск пользователя"
-          }
-        }
-      }
-    },
-    "searchTab" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
             "value" : "Search"
           }
         },
@@ -306,6 +323,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Поиск"
+          }
+        }
+      }
+    },
+    "searchUsername" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search for a username"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поиск пользователя"
           }
         }
       }
