@@ -60,16 +60,16 @@ final class ItemInfoView: UIView {
         switch itemType {
         case .repos:
             symbolImageView.image = SFSymbolsImage.repos
-            titleLabel.text = "Public Repos"
+            titleLabel.text = LocalizedStrings.repos
         case .gists:
             symbolImageView.image = SFSymbolsImage.gists
-            titleLabel.text = "Public Gists"
+            titleLabel.text = LocalizedStrings.gists
         case .followers:
             symbolImageView.image = SFSymbolsImage.followers
-            titleLabel.text = "Followers"
+            titleLabel.text = LocalizedStrings.getFollowers
         case .following:
             symbolImageView.image = SFSymbolsImage.following
-            titleLabel.text = "Following"
+            titleLabel.text = LocalizedStrings.following
         }
         
         countLabel.text = "\(withCount)"
