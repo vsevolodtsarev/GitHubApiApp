@@ -76,7 +76,7 @@ final class CustomAlertViewController: UIViewController {
     
     private func configureTitleLabel() {
         containerView.addSubview(titleLabel)
-        titleLabel.text = alertTitle ?? "Something went wrong"
+        titleLabel.text = alertTitle ?? NSLocalizedString("wrong", comment: "Something went wrong")
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
@@ -88,7 +88,7 @@ final class CustomAlertViewController: UIViewController {
     
     private func configureMessageLabel() {
         containerView.addSubview(messageLabel)
-        messageLabel.text = alertMessage ?? "Unable to complete request"
+        messageLabel.text = alertMessage ?? NSLocalizedString("UncompleteRequest", comment: "Unable to complete request")
         messageLabel.numberOfLines = 4
         
         NSLayoutConstraint.activate([
