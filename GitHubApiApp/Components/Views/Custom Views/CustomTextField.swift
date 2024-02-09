@@ -32,7 +32,7 @@ final class CustomTextField: UITextField {
         backgroundColor = .tertiarySystemBackground
         autocorrectionType = .no
         returnKeyType = .go
-        placeholder = "Enter a username"
+        placeholder = LocalizedStrings.enterUsername
         clearButtonMode = .whileEditing
         
         translatesAutoresizingMaskIntoConstraints = false

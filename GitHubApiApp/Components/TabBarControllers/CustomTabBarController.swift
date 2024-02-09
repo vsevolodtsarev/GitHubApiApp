@@ -17,14 +17,14 @@ final class CustomTabBarController: UITabBarController {
     
     private func createSearchNavigationController() -> UINavigationController {
         let searchViewController = SearchViewController()
-        searchViewController.title = "Search"
+        searchViewController.title = LocalizedStrings.search
         searchViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         return UINavigationController(rootViewController: searchViewController)
     }
     
     private func createFavoritesNavigationController() -> UINavigationController {
         let favoritesViewController = FavoritesViewController()
-        favoritesViewController.title = "Favorites"
+        favoritesViewController.title = LocalizedStrings.favorites
         favoritesViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         return UINavigationController(rootViewController: favoritesViewController)
     }

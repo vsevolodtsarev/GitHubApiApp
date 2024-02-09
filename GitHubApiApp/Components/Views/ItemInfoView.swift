@@ -59,17 +59,17 @@ final class ItemInfoView: UIView {
     func set(itemType: ItemInfoType, withCount: Int) {
         switch itemType {
         case .repos:
-            symbolImageView.image = UIImage(systemName: "folder")
-            titleLabel.text = "Public Repos"
+            symbolImageView.image = SFSymbolsImage.repos
+            titleLabel.text = LocalizedStrings.repos
         case .gists:
-            symbolImageView.image = UIImage(systemName: "text.alignleft")
-            titleLabel.text = "Public Gists"
+            symbolImageView.image = SFSymbolsImage.gists
+            titleLabel.text = LocalizedStrings.gists
         case .followers:
-            symbolImageView.image = UIImage(systemName: "heart")
-            titleLabel.text = "Followers"
+            symbolImageView.image = SFSymbolsImage.followers
+            titleLabel.text = LocalizedStrings.getFollowers
         case .following:
-            symbolImageView.image = UIImage(systemName: "person.2")
-            titleLabel.text = "Following"
+            symbolImageView.image = SFSymbolsImage.following
+            titleLabel.text = LocalizedStrings.following
         }
         
         countLabel.text = "\(withCount)"

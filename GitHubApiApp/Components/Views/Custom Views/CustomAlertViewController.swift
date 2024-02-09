@@ -33,7 +33,7 @@ final class CustomAlertViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
+        view.backgroundColor = .black.withAlphaComponent(0.75)
         
         configureContainerView()
         configureTitleLabel()
@@ -76,7 +76,7 @@ final class CustomAlertViewController: UIViewController {
     
     private func configureTitleLabel() {
         containerView.addSubview(titleLabel)
-        titleLabel.text = alertTitle ?? "Something went wrong"
+        titleLabel.text = alertTitle ?? LocalizedStrings.wrong
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
@@ -88,7 +88,7 @@ final class CustomAlertViewController: UIViewController {
     
     private func configureMessageLabel() {
         containerView.addSubview(messageLabel)
-        messageLabel.text = alertMessage ?? "Unable to complete request"
+        messageLabel.text = alertMessage ?? LocalizedStrings.uncompleteRequest
         messageLabel.numberOfLines = 4
         
         NSLayoutConstraint.activate([

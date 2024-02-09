@@ -12,7 +12,7 @@ final class SearchViewController: UIViewController {
     private let logoImageView = UIImageView()
     private let usernameTextField = CustomTextField()
     private let getFollowersButton = CustomButton(backgroundColor: .dynamicButtonColor,
-                                                  title: "Get Followers",
+                                                  title: LocalizedStrings.getFollowers,
                                                   titleColor: .dynamicButtonTextColor)
     private var isUsernameEntered: Bool {
         guard let textfield = usernameTextField.text else { return false }
@@ -43,8 +43,8 @@ final class SearchViewController: UIViewController {
     @objc private func pushFollowersListViewController() {
         guard isUsernameEntered else {
             presentAlertViewControllerOnMainThread(
-                alertTitle: "Empty Username",
-                alertMessage: "Please enter a username. We need to know who to look for 😀.",
+                alertTitle: LocalizedStrings.emptyUsername,
+                alertMessage: LocalizedStrings.enterUsernameAlert,
                 buttonTitle: "Ok")
             return
         }

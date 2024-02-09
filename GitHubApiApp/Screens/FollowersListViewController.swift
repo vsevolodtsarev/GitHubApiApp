@@ -25,6 +25,7 @@ final class FollowersListViewController: UIViewController {
     private var page: Int = 1
     private var hasMoreFollowers: Bool = true
     private var isSearching: Bool = false
+    private var isLoadingMoreFollowers: Bool = false
     
     init(username: String) {
         self.username = username
@@ -65,21 +66,21 @@ final class FollowersListViewController: UIViewController {
                 PersistenceManager.updateWith(favorite: favorite,
                                               actionType: .add) { error in
                     guard let error = error else {
-                        self.presentAlertViewControllerOnMainThread(alertTitle: "Success!",
-                                                               alertMessage: "You have successfully favorited this user🎉",
+                        self.presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.success,
+                                                                    alertMessage: LocalizedStrings.addFavorite,
                                                                buttonTitle: "Ok")
                         return
                     }
                     
-                    self.presentAlertViewControllerOnMainThread(alertTitle: "Something went wrong",
-                                                           alertMessage: error.rawValue,
+                    self.presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
+                                                                alertMessage: error.localizedDescription,
                                                            buttonTitle: "Ok")
                 }
                 
                 
             case .failure(let error):
-                presentAlertViewControllerOnMainThread(alertTitle: "Something went wrong",
-                                                       alertMessage: error.rawValue,
+                presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
+                                                       alertMessage: error.localizedDescription,
                                                        buttonTitle: "Ok")
             }
         }
@@ -117,8 +118,7 @@ final class FollowersListViewController: UIViewController {
     private func configureSearchController() {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search for a username"
+        searchController.searchBar.placeholder = LocalizedStrings.searchUsername
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
     }
@@ -150,6 +150,8 @@ final class FollowersListViewController: UIViewController {
     
     private func getFollowers(username: String, page: Int) {
         showLoadingView()
+        isLoadingMoreFollowers = true
+        
         NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result  in
             
             guard let self = self else { return }
@@ -160,7 +162,7 @@ final class FollowersListViewController: UIViewController {
                 self.followers.append(contentsOf: followers)
                 
                 if followers.isEmpty {
-                    let message = "This user doesn't have any followers. Go follow them 😀"
+                    let message = LocalizedStrings.noFollowers
                     DispatchQueue.main.async {
                         self.showEmptyStateView(with: message, in: self.view)
                         return
@@ -170,10 +172,12 @@ final class FollowersListViewController: UIViewController {
                 updateData(on: followers)
                 
             case .failure(let error):
-                presentAlertViewControllerOnMainThread(alertTitle: "Bad Stuff Happened!",
-                                                       alertMessage: error.rawValue,
+                presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.badStuff,
+                                                       alertMessage: error.localizedDescription,
                                                        buttonTitle: "Ok")
             }
+            
+            isLoadingMoreFollowers = false
         }
     }
 }
@@ -195,7 +199,7 @@ extension FollowersListViewController: UICollectionViewDelegate {
         let height = scrollView.frame.size.height
         
         if offsetY > contentHeight - height {
-            guard hasMoreFollowers else { return }
+            guard hasMoreFollowers, !isLoadingMoreFollowers else { return }
             page += 1
             getFollowers(username: username, page: page)
         }
@@ -205,19 +209,16 @@ extension FollowersListViewController: UICollectionViewDelegate {
 extension FollowersListViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else {
+            filteredFollowers.removeAll()
+            updateData(on: followers)
+            isSearching = false
+            return
+        }
         
         isSearching = true
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
         updateData(on: filteredFollowers)
-    }
-}
-
-extension FollowersListViewController: UISearchBarDelegate {
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isSearching = false
-        updateData(on: followers)
     }
 }
 
@@ -228,7 +229,7 @@ extension FollowersListViewController: FollowerListViewControllerDelegate {
         page = 1
         followers.removeAll()
         filteredFollowers.removeAll()
-        collectionView?.setContentOffset(.zero, animated: true)
+        collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         getFollowers(username: username, page: page)
     }
 }

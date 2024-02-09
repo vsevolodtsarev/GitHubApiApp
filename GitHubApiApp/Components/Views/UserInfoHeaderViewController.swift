@@ -38,11 +38,11 @@ final class UserInfoHeaderViewController: UIViewController {
         avatarImageView.setAvatarImage(from: user.avatarUrl)
         userNameLabel.text = user.login
         nameLabel.text = user.name ?? ""
-        locationLabel.text = user.location ?? "No Location"
-        bioLabel.text = user.bio ?? "No bio available"
+        locationLabel.text = user.location ?? LocalizedStrings.noLocation
+        bioLabel.text = user.bio ?? LocalizedStrings.noBio
         bioLabel.numberOfLines = 3
         
-        locationImageView.image = UIImage(systemName: "mappin.and.ellipse")
+        locationImageView.image = SFSymbolsImage.location
         locationImageView.tintColor = .secondaryLabel
     }
     

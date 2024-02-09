@@ -18,12 +18,11 @@ final class CustomButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(backgroundColor: UIColor, title: String, titleColor: UIColor) {
-        super.init(frame: .zero)
+    convenience init(backgroundColor: UIColor, title: String, titleColor: UIColor) {
+        self.init(frame: .zero)
         self.backgroundColor = backgroundColor
         self.setTitle(title, for: .normal)
         self.setTitleColor(titleColor, for: .normal)
-        configure()
     }
     
     private func configure() {
