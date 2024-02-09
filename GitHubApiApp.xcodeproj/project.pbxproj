@@ -116,6 +116,7 @@
 			children = (
 				1331BDA52B69196200AD1928 /* Errors.swift */,
 				13E10F942B75F927004EF8E0 /* Constants.swift */,
+				139E04232B7685560098CA8D /* Localizable.xcstrings */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -188,7 +189,6 @@
 			children = (
 				139B69122B67DF59000521FD /* LaunchScreen.storyboard */,
 				139B69102B67DF59000521FD /* Assets.xcassets */,
-				139E04232B7685560098CA8D /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

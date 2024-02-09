@@ -25,6 +25,7 @@ enum LocalizedStrings {
     static let wrong = NSLocalizedString("wrong", comment: "Something went wrong")
     static let uncompleteRequest = NSLocalizedString("uncompleteRequest", comment: "Unable to complete request")
     static let enterUsername = NSLocalizedString("enterUsername", comment: "Enter a username")
+    static let enterUsernameAlert = NSLocalizedString("enterUsernameAlert", comment: "Enter a username")
     static let noBio = NSLocalizedString("noBio", comment: "No bio")
     static let noLocation = NSLocalizedString("noLocation", comment: "No location")
     static let getFollowers = NSLocalizedString("getFollowers", comment: "Get Followers")
@@ -34,4 +35,5 @@ enum LocalizedStrings {
     static let gists = NSLocalizedString("gists", comment: "Public Gists")
     static let noFavorites = NSLocalizedString("noFavorites", comment: "No favorites, add plz")
     static let noRemove = NSLocalizedString("noRemove", comment: "Unable to remove")
+    static let emptyUsername = NSLocalizedString("emptyUsername", comment: "Empty Username")
 }
