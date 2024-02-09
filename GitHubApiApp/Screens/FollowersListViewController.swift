@@ -25,7 +25,7 @@ final class FollowersListViewController: UIViewController {
     private var page: Int = 1
     private var hasMoreFollowers: Bool = true
     private var isSearching: Bool = false
-    private var isLoadingMoreFollowers = false
+    private var isLoadingMoreFollowers: Bool = false
     
     init(username: String) {
         self.username = username
