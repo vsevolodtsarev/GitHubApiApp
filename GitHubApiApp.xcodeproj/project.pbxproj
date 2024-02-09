@@ -38,6 +38,7 @@
 		139B692B2B68D4FB000521FD /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */; };
 		13E10F8F2B73525E004EF8E0 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E10F8E2B73525E004EF8E0 /* FavoritesCell.swift */; };
 		13E10F932B73F841004EF8E0 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E10F922B73F841004EF8E0 /* CustomTabBarController.swift */; };
+		13E10F952B75F927004EF8E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E10F942B75F927004EF8E0 /* Constants.swift */; };
 		13F33DA42B721AB9004CDA50 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F33DA32B721AB9004CDA50 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		13E10F8E2B73525E004EF8E0 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		13E10F922B73F841004EF8E0 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		13E10F942B75F927004EF8E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		13F33DA32B721AB9004CDA50 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				1331BDA52B69196200AD1928 /* Errors.swift */,
+				13E10F942B75F927004EF8E0 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				139B69292B68D314000521FD /* CustomBodyLabel.swift in Sources */,
 				13E10F8F2B73525E004EF8E0 /* FavoritesCell.swift in Sources */,
 				139B692B2B68D4FB000521FD /* CustomAlertViewController.swift in Sources */,
+				13E10F952B75F927004EF8E0 /* Constants.swift in Sources */,
 				139B69222B67F592000521FD /* CustomTextField.swift in Sources */,
 				136CD4462B6CA5E4006947AE /* CustomSecondaryTitleLabel.swift in Sources */,
 				139B69252B681C82000521FD /* FollowersListViewController.swift in Sources */,
