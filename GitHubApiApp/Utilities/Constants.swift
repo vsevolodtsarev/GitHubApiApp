@@ -36,4 +36,7 @@ enum LocalizedStrings {
     static let noFavorites = NSLocalizedString("noFavorites", comment: "No favorites, add plz")
     static let noRemove = NSLocalizedString("noRemove", comment: "Unable to remove")
     static let emptyUsername = NSLocalizedString("emptyUsername", comment: "Empty Username")
+    static let noFollowers = NSLocalizedString("noFollowers", comment: "No Followers, follow him")
+    static let noFollowersTitle = NSLocalizedString("noFollowersTitle", comment: "No Followers")
+    static let gitHubSince = NSLocalizedString("gitHubSince", comment: "GitHub Since")
 }

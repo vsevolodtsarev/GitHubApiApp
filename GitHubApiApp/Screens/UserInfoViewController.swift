@@ -51,7 +51,9 @@ final class UserInfoViewController: UIViewController {
                 }
                 
             case .failure(let error):
-                presentAlertViewControllerOnMainThread(alertTitle: "Something wrong", alertMessage: error.rawValue, buttonTitle: "Ok")
+                presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
+                                                       alertMessage: error.localizedDescription,
+                                                       buttonTitle: "Ok")
             }
         }
     }
@@ -71,7 +73,7 @@ final class UserInfoViewController: UIViewController {
         addChildViewController(add: userInfoHeaderViewController, to: headerView)
         addChildViewController(add: repoItemViewController, to: itemViewOne)
         addChildViewController(add: followerItemViewController, to: itemViewTwo)
-        dateLabel.text = "GitHub since \(user.createdAt.convertToMonthYearFormat())"
+        dateLabel.text = "\(LocalizedStrings.gitHubSince) \(user.createdAt.convertToMonthYearFormat())"
     }
     
     private func configureViewController() {
@@ -133,9 +135,9 @@ extension UserInfoViewController: UserInfoViewControllerDelegate {
     
     func didTapGetFollowers(for user: User) {
         guard user.followers != 0 else {
-            presentAlertViewControllerOnMainThread(alertTitle: "No followers",
-                                                   alertMessage: "This user has no followers 😔.",
-                                                   buttonTitle: "So sad")
+            presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.noFollowersTitle,
+                                                   alertMessage: LocalizedStrings.noFollowers,
+                                                   buttonTitle: "Ok")
             return
         }
         delegate?.didRequestFollowers(for: user.login)
