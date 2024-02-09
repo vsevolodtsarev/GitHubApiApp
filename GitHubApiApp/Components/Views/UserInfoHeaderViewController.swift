@@ -42,7 +42,7 @@ final class UserInfoHeaderViewController: UIViewController {
         bioLabel.text = user.bio ?? "No bio available"
         bioLabel.numberOfLines = 3
         
-        locationImageView.image = UIImage(systemName: "mappin.and.ellipse")
+        locationImageView.image = SFSymbolsImage.location
         locationImageView.tintColor = .secondaryLabel
     }
     
