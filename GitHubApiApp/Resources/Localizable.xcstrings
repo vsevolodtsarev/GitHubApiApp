@@ -225,7 +225,7 @@
         }
       }
     },
-    "UncompleteRequest" : {
+    "uncompleteRequest" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {

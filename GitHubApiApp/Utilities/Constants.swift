@@ -22,4 +22,6 @@ enum SFSymbolsImage {
 enum LocalizedStrings {
     static let searchTab = NSLocalizedString("searchTab", comment: "search tab")
     static let favoritesTab = NSLocalizedString("favoritesTab", comment: "favorites tab")
+    static let wrong = NSLocalizedString("wrong", comment: "Something went wrong")
+    static let uncompleteRequest = NSLocalizedString("uncompleteRequest", comment: "Unable to complete request")
 }
