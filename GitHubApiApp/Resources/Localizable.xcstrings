@@ -38,6 +38,23 @@
         }
       }
     },
+    "badStuff" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bad Stuff Happened!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Случилось что-то плохое!"
+          }
+        }
+      }
+    },
     "invalidData" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -85,6 +102,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Это имя пользователя создало недопустимый запрос. Пожалуйста, попробуйте снова."
+          }
+        }
+      }
+    },
+    "noFollowers" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This user doesn't have any followers. Go follow them 😀"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У этого пользователя нет подписчиков. Подпишись на него😀"
+          }
+        }
+      }
+    },
+    "search" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search for a username"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поиск пользователя"
           }
         }
       }

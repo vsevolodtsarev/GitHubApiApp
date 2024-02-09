@@ -66,21 +66,21 @@ final class FollowersListViewController: UIViewController {
                 PersistenceManager.updateWith(favorite: favorite,
                                               actionType: .add) { error in
                     guard let error = error else {
-                        self.presentAlertViewControllerOnMainThread(alertTitle: "Success!",
-                                                               alertMessage: "You have successfully favorited this user🎉",
+                        self.presentAlertViewControllerOnMainThread(alertTitle: NSLocalizedString("success", comment: "Success!"),
+                                                               alertMessage: NSLocalizedString("addFavorite", comment: "addFavorite"),
                                                                buttonTitle: "Ok")
                         return
                     }
                     
-                    self.presentAlertViewControllerOnMainThread(alertTitle: "Something went wrong",
-                                                           alertMessage: error.rawValue,
+                    self.presentAlertViewControllerOnMainThread(alertTitle: NSLocalizedString("wrong", comment: "Something went wrong"),
+                                                                alertMessage: error.localizedDescription,
                                                            buttonTitle: "Ok")
                 }
                 
                 
             case .failure(let error):
-                presentAlertViewControllerOnMainThread(alertTitle: "Something went wrong",
-                                                       alertMessage: error.rawValue,
+                presentAlertViewControllerOnMainThread(alertTitle: NSLocalizedString("wrong", comment: "Something went wrong"),
+                                                       alertMessage: error.localizedDescription,
                                                        buttonTitle: "Ok")
             }
         }
@@ -118,7 +118,7 @@ final class FollowersListViewController: UIViewController {
     private func configureSearchController() {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "Search for a username"
+        searchController.searchBar.placeholder = NSLocalizedString("search", comment: "Search for a username")
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
     }
@@ -162,7 +162,7 @@ final class FollowersListViewController: UIViewController {
                 self.followers.append(contentsOf: followers)
                 
                 if followers.isEmpty {
-                    let message = "This user doesn't have any followers. Go follow them 😀"
+                    let message = NSLocalizedString("noFollowers", comment: "no followers")
                     DispatchQueue.main.async {
                         self.showEmptyStateView(with: message, in: self.view)
                         return
@@ -172,8 +172,8 @@ final class FollowersListViewController: UIViewController {
                 updateData(on: followers)
                 
             case .failure(let error):
-                presentAlertViewControllerOnMainThread(alertTitle: "Bad Stuff Happened!",
-                                                       alertMessage: error.rawValue,
+                presentAlertViewControllerOnMainThread(alertTitle: NSLocalizedString("badStuff", comment: "bad stuff"),
+                                                       alertMessage: error.localizedDescription,
                                                        buttonTitle: "Ok")
             }
             
