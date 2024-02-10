@@ -37,6 +37,7 @@
 		139B69292B68D314000521FD /* CustomBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B69282B68D314000521FD /* CustomBodyLabel.swift */; };
 		139B692B2B68D4FB000521FD /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */; };
 		139E04242B7685560098CA8D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 139E04232B7685560098CA8D /* Localizable.xcstrings */; };
+		139E04262B77C9D10098CA8D /* UITableView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139E04252B77C9D10098CA8D /* UITableView + Extensions.swift */; };
 		13E10F8F2B73525E004EF8E0 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E10F8E2B73525E004EF8E0 /* FavoritesCell.swift */; };
 		13E10F932B73F841004EF8E0 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E10F922B73F841004EF8E0 /* CustomTabBarController.swift */; };
 		13E10F952B75F927004EF8E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E10F942B75F927004EF8E0 /* Constants.swift */; };
@@ -76,6 +77,7 @@
 		139B69282B68D314000521FD /* CustomBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBodyLabel.swift; sourceTree = "<group>"; };
 		139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		139E04232B7685560098CA8D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		139E04252B77C9D10098CA8D /* UITableView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + Extensions.swift"; sourceTree = "<group>"; };
 		13E10F8E2B73525E004EF8E0 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		13E10F922B73F841004EF8E0 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		13E10F942B75F927004EF8E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				1331BD9A2B68E2BF00AD1928 /* UIViewController + Extensions.swift */,
 				136CD43F2B6B8F04006947AE /* UIColor + Extensions.swift */,
 				136CD4632B70CB7D006947AE /* Date + Extensions.swift */,
+				139E04252B77C9D10098CA8D /* UITableView + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				13F33DA42B721AB9004CDA50 /* PersistenceManager.swift in Sources */,
 				1331BD9B2B68E2BF00AD1928 /* UIViewController + Extensions.swift in Sources */,
 				136CD45B2B6EAFD2006947AE /* ItemInfoView.swift in Sources */,
+				139E04262B77C9D10098CA8D /* UITableView + Extensions.swift in Sources */,
 				1331BDA32B69075D00AD1928 /* NetworkManager.swift in Sources */,
 				139B690A2B67DF58000521FD /* SceneDelegate.swift in Sources */,
 				139B69272B68CFFF000521FD /* CustomTitleLabel.swift in Sources */,
