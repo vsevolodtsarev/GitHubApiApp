@@ -35,7 +35,9 @@ class ItemInfoViewController: UIViewController {
         configureActionButton()
     }
     
-    @objc func didTapButton() {}
+    @objc func didTapButton() {
+        
+    }
     
     private func configureActionButton() {
         actionButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
