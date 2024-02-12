@@ -17,7 +17,7 @@ final class FollowerItemViewController: ItemInfoViewController {
     private func configureItems() {
         itemInfoViewOne.set(itemType: .followers, withCount: user.followers)
         itemInfoViewTwo.set(itemType: .following, withCount: user.following)
-        actionButton.set(backgroundColor: .systemGreen, title: LocalizedStrings.getFollowers)
+        actionButton.set(color: .systemGreen, title: LocalizedStrings.getFollowers, titleColor: .white)
     }
     
     override func didTapButton() {
