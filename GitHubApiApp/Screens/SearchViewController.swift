@@ -12,7 +12,7 @@ final class SearchViewController: UIViewController {
     private let logoImageView = UIImageView()
     private let usernameTextField = CustomTextField()
     private let getFollowersButton = CustomButton(backgroundColor: .dynamicButtonColor,
-                                                  title: LocalizedStrings.getFollowers,
+                                                  title: LocalizedStrings.getFollowers, 
                                                   titleColor: .dynamicButtonTextColor)
     private var isUsernameEntered: Bool {
         guard let textfield = usernameTextField.text else { return false }

@@ -20,19 +20,18 @@ final class CustomButton: UIButton {
     
     convenience init(backgroundColor: UIColor, title: String, titleColor: UIColor) {
         self.init(frame: .zero)
-        self.backgroundColor = backgroundColor
-        self.setTitle(title, for: .normal)
-        self.setTitleColor(titleColor, for: .normal)
+        set(color: backgroundColor, title: title, titleColor: titleColor)
     }
     
     private func configure() {
-        layer.cornerRadius = 10
-        titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+        configuration = .filled()
+        configuration?.cornerStyle = .medium
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func set(backgroundColor: UIColor, title: String) {
-        self.backgroundColor = backgroundColor
-        setTitle(title, for: .normal)
+    func set(color: UIColor, title: String, titleColor: UIColor) {
+        configuration?.baseBackgroundColor = color
+        configuration?.baseForegroundColor = titleColor
+        configuration?.title = title
     }
 }

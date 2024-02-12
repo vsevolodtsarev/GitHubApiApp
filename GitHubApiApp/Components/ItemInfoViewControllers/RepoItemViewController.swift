@@ -17,7 +17,7 @@ final class RepoItemViewController: ItemInfoViewController {
     private func configureItems() {
         itemInfoViewOne.set(itemType: .repos, withCount: user.publicRepos)
         itemInfoViewTwo.set(itemType: .gists, withCount: user.publicGists)
-        actionButton.set(backgroundColor: .systemPurple, title: LocalizedStrings.profile)
+        actionButton.set(color: .systemPurple, title: LocalizedStrings.profile, titleColor: .white)
     }
     
     override func didTapButton() {
