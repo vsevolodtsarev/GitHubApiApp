@@ -28,13 +28,11 @@ final class AvatarImageView: UIImageView {
     }
     
     func setAvatarImage(from url: URL) {
-        NetworkManager.shared.downloadAvatarImage(from: url) { [weak self] result in
-            
-            guard let self = self else { return }
-            switch result {
-            case .success(let image):
+        Task {
+            do {
+                let image = try await NetworkManagerAsyncAwait.shared.downloadAvatarImage(from: url)
                 self.image = image
-            case .failure(let error):
+            } catch {
                 assertionFailure("\(error)")
             }
         }

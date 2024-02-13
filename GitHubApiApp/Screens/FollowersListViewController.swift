@@ -68,13 +68,13 @@ final class FollowersListViewController: UIViewController {
                     guard let error = error else {
                         self.presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.success,
                                                                     alertMessage: LocalizedStrings.addFavorite,
-                                                               buttonTitle: "Ok")
+                                                                    buttonTitle: "Ok")
                         return
                     }
                     
                     self.presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
                                                                 alertMessage: error.localizedDescription,
-                                                           buttonTitle: "Ok")
+                                                                buttonTitle: "Ok")
                 }
                 
                 
@@ -152,31 +152,26 @@ final class FollowersListViewController: UIViewController {
         showLoadingView()
         isLoadingMoreFollowers = true
         
-        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result  in
-            
-            guard let self = self else { return }
-            self.dismissLoadingView()
-            switch result {
-            case .success(let followers):
+        Task {
+            do {
+                let followers = try await NetworkManagerAsyncAwait.shared.getFollowers(for: username, page: page)
                 if followers.count < 100 { hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
-                
                 if followers.isEmpty {
                     let message = LocalizedStrings.noFollowers
-                    DispatchQueue.main.async {
-                        self.showEmptyStateView(with: message, in: self.view)
-                        return
-                    }
+                    showEmptyStateView(with: message, in: self.view)
+                    dismissLoadingView()
                 }
-                
                 updateData(on: followers)
-                
-            case .failure(let error):
-                presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.badStuff,
-                                                       alertMessage: error.localizedDescription,
-                                                       buttonTitle: "Ok")
+                dismissLoadingView()
+            } catch {
+                if let error = error as? Errors {
+                    presentCustomAlertViewController(alertTitle: LocalizedStrings.badStuff,
+                                                     alertMessage: error.localizedDescription,
+                                                     buttonTitle: "Ok")
+                }
+                dismissLoadingView()
             }
-            
             isLoadingMoreFollowers = false
         }
     }
