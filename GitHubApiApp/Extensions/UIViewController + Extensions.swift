@@ -22,13 +22,24 @@ extension UIViewController {
                                                 alertMessage: String,
                                                 buttonTitle: String) {
         DispatchQueue.main.async {
-            let alertViewController = CustomAlertViewController(alertTitle: alertTitle, 
+            let alertViewController = CustomAlertViewController(alertTitle: alertTitle,
                                                                 alertMessage: alertMessage,
                                                                 buttonTitle: buttonTitle)
             alertViewController.modalTransitionStyle = .crossDissolve
             alertViewController.modalPresentationStyle = .overFullScreen
             self.present(alertViewController, animated: true)
         }
+    }
+    
+    func presentCustomAlertViewController(alertTitle: String,
+                                    alertMessage: String,
+                                    buttonTitle: String) {
+        let alertViewController = CustomAlertViewController(alertTitle: alertTitle,
+                                                            alertMessage: alertMessage,
+                                                            buttonTitle: buttonTitle)
+        alertViewController.modalTransitionStyle = .crossDissolve
+        alertViewController.modalPresentationStyle = .overFullScreen
+        present(alertViewController, animated: true)
     }
     
     func showLoadingView() {
