@@ -41,19 +41,16 @@ final class UserInfoViewController: UIViewController {
     }
     
     private func getUserInfo() {
-        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let user):
-                DispatchQueue.main.async {
-                    self.configureUIElements(with: user)
+        Task {
+            do {
+               let user = try await NetworkManagerAsyncAwait.shared.getUserInfo(for: username)
+                configureUIElements(with: user)
+            } catch {
+                if let error = error as? Errors {
+                    presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
+                                                           alertMessage: error.localizedDescription,
+                                                           buttonTitle: "Ok")
                 }
-                
-            case .failure(let error):
-                presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
-                                                       alertMessage: error.localizedDescription,
-                                                       buttonTitle: "Ok")
             }
         }
     }
