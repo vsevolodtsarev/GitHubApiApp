@@ -54,36 +54,36 @@ final class FollowersListViewController: UIViewController {
     @objc private func didTapAddButton() {
         showLoadingView()
         
-        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
-            guard let self = self else { return }
-            
-            dismissLoadingView()
-            
-            switch result {
-            case .success(let user):
+        Task {
+            do {
+                let user = try await NetworkManagerAsyncAwait.shared.getUserInfo(for: username)
                 let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
                 
                 PersistenceManager.updateWith(favorite: favorite,
-                                              actionType: .add) { error in
+                                              actionType: .add) { [weak self] error in
+                    guard let self else { return }
                     guard let error = error else {
-                        self.presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.success,
-                                                                    alertMessage: LocalizedStrings.addFavorite,
-                                                                    buttonTitle: "Ok")
+                        self.presentCustomAlertViewController(alertTitle: LocalizedStrings.success,
+                                                              alertMessage: LocalizedStrings.addFavorite,
+                                                              buttonTitle: "Ok")
                         return
                     }
                     
-                    self.presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
-                                                                alertMessage: error.localizedDescription,
-                                                                buttonTitle: "Ok")
+                    self.presentCustomAlertViewController(alertTitle: LocalizedStrings.wrong,
+                                                          alertMessage: error.localizedDescription,
+                                                          buttonTitle: "Ok")
                 }
-                
-                
-            case .failure(let error):
-                presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
-                                                       alertMessage: error.localizedDescription,
-                                                       buttonTitle: "Ok")
+            } catch {
+                if let error = error as? Errors {
+                    presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
+                                                           alertMessage: error.localizedDescription,
+                                                           buttonTitle: "Ok")
+                }
             }
         }
+        
+        dismissLoadingView()
+        
     }
     
     private func configureViewController() {
