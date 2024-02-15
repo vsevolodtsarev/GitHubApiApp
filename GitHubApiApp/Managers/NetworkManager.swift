@@ -37,7 +37,7 @@ final class NetworkManager {
                 return
             }
             
-            guard let data = data else {
+            guard let data else {
                 completion(.failure(.invalidData))
                 return
             }
@@ -76,7 +76,7 @@ final class NetworkManager {
                 return
             }
             
-            guard let data = data else {
+            guard let data else {
                 completion(.failure(.invalidData))
                 return
             }
@@ -102,7 +102,7 @@ final class NetworkManager {
         }
         
         task.dataTask(with: url) { [weak self] data, response, error in
-            guard let self = self else { return }
+            guard let self else { return }
             
             if let _ = error {
                 completion(.failure(.unableToComplete))
@@ -114,7 +114,7 @@ final class NetworkManager {
                 return
             }
             
-            guard let data = data else {
+            guard let data else {
                 completion(.failure(.invalidData))
                 return
             }

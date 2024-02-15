@@ -56,7 +56,7 @@ final class FollowersListViewController: UIViewController {
         PersistenceManager.updateWith(favorite: favorite,
                                       actionType: .add) { [weak self] error in
             guard let self else { return }
-            guard let error = error else {
+            guard let error else {
                 self.presentCustomAlertViewController(alertTitle: LocalizedStrings.success,
                                                       alertMessage: LocalizedStrings.addFavorite,
                                                       buttonTitle: "Ok")
@@ -98,7 +98,7 @@ final class FollowersListViewController: UIViewController {
     
     private func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout())
-        guard let collectionView = collectionView else { return }
+        guard let collectionView else { return }
         
         view.addSubview(collectionView)
         collectionView.delegate = self
@@ -107,7 +107,7 @@ final class FollowersListViewController: UIViewController {
     }
     
     private func configureDataSource() {
-        guard let collectionView = collectionView else { return }
+        guard let collectionView else { return }
         dataSource = UICollectionViewDiffableDataSource<Section, Follower>(
             collectionView: collectionView,
             cellProvider: { collectionView, indexPath, follower in
