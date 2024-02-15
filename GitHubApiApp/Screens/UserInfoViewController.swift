@@ -47,7 +47,7 @@ final class UserInfoViewController: UIViewController {
                 configureUIElements(with: user)
             } catch {
                 if let error = error as? Errors {
-                    presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
+                    presentCustomAlertViewController(alertTitle: LocalizedStrings.wrong,
                                                            alertMessage: error.localizedDescription,
                                                            buttonTitle: "Ok")
                 }
