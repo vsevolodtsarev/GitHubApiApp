@@ -62,25 +62,24 @@ final class NetworkManagerAsyncAwait {
         }
     }
     
-    func downloadAvatarImage(from url: URL) async throws -> UIImage {
+    func downloadAvatarImage(from url: URL) async -> UIImage? {
         let cacheKey = NSString(string: "\(url)")
         if let image = cache.object(forKey: cacheKey) {
             return image
         }
-            
-        let (data, response) = try await task.data(from: url)
         
+        do {
+            let (data, _) = try await task.data(from: url)
             
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw Errors.invalidResponse
+            guard let image = UIImage(data: data) else {
+                return nil
+            }
+            
+            cache.setObject(image, forKey: cacheKey)
+            return image
+            
+        } catch {
+            return nil
         }
-            
-        guard let image = UIImage(data: data) else {
-            throw Errors.invalidData
-        }
-        
-        cache.setObject(image, forKey: cacheKey)
-        return image
-        
     }
 }

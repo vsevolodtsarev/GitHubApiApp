@@ -29,12 +29,7 @@ final class AvatarImageView: UIImageView {
     
     func setAvatarImage(from url: URL) {
         Task {
-            do {
-                let image = try await NetworkManagerAsyncAwait.shared.downloadAvatarImage(from: url)
-                self.image = image
-            } catch {
-                assertionFailure("\(error)")
-            }
+            image = await NetworkManagerAsyncAwait.shared.downloadAvatarImage(from: url) ?? placeHolderImage
         }
     }
 }
