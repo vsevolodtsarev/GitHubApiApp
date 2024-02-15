@@ -51,28 +51,32 @@ final class FollowersListViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    private func addUserToFavorite(user: User) {
+        let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+        PersistenceManager.updateWith(favorite: favorite,
+                                      actionType: .add) { [weak self] error in
+            guard let self else { return }
+            guard let error = error else {
+                self.presentCustomAlertViewController(alertTitle: LocalizedStrings.success,
+                                                      alertMessage: LocalizedStrings.addFavorite,
+                                                      buttonTitle: "Ok")
+                return
+            }
+            
+            self.presentCustomAlertViewController(alertTitle: LocalizedStrings.wrong,
+                                                  alertMessage: error.localizedDescription,
+                                                  buttonTitle: "Ok")
+        }
+    }
+    
     @objc private func didTapAddButton() {
         showLoadingView()
         
         Task {
             do {
                 let user = try await NetworkManagerAsyncAwait.shared.getUserInfo(for: username)
-                let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+                addUserToFavorite(user: user)
                 
-                PersistenceManager.updateWith(favorite: favorite,
-                                              actionType: .add) { [weak self] error in
-                    guard let self else { return }
-                    guard let error = error else {
-                        self.presentCustomAlertViewController(alertTitle: LocalizedStrings.success,
-                                                              alertMessage: LocalizedStrings.addFavorite,
-                                                              buttonTitle: "Ok")
-                        return
-                    }
-                    
-                    self.presentCustomAlertViewController(alertTitle: LocalizedStrings.wrong,
-                                                          alertMessage: error.localizedDescription,
-                                                          buttonTitle: "Ok")
-                }
             } catch {
                 if let error = error as? Errors {
                     presentCustomAlertViewController(alertTitle: LocalizedStrings.wrong,
@@ -81,9 +85,7 @@ final class FollowersListViewController: UIViewController {
                 }
             }
         }
-        
         dismissLoadingView()
-        
     }
     
     private func configureViewController() {
