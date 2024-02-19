@@ -42,26 +42,43 @@ final class FavoritesViewController: UIViewController {
     }
     
     private func getFavorites() {
-        PersistenceManager.retrieveFavorites { [weak self] result in
-            guard let self else { return }
-            switch result {
-            case .success(let favorites):
+        
+        Task {
+            do {
+                let favorites = try await PersistenceManagerAsyncAwait.shared.retrieveFavorites()
                 if favorites.isEmpty {
                     showEmptyStateView(with: LocalizedStrings.noFavorites, in: view)
                 } else {
                     self.favorites = favorites
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                        self.view.bringSubviewToFront(self.tableView)
-                    }
+                    tableView.reloadData()
+                    view.bringSubviewToFront(tableView)
                 }
-                
-            case .failure(let error):
+            } catch {
                 presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
                                                        alertMessage: error.localizedDescription,
                                                        buttonTitle: "Ok")
             }
         }
+        //        PersistenceManager.retrieveFavorites { [weak self] result in
+        //            guard let self else { return }
+        //            switch result {
+        //            case .success(let favorites):
+        //                if favorites.isEmpty {
+        //                    showEmptyStateView(with: LocalizedStrings.noFavorites, in: view)
+        //                } else {
+        //                    self.favorites = favorites
+        //                    DispatchQueue.main.async {
+        //                        self.tableView.reloadData()
+        //                        self.view.bringSubviewToFront(self.tableView)
+        //                    }
+        //                }
+        //
+        //            case .failure(let error):
+        //                presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.wrong,
+        //                                                       alertMessage: error.localizedDescription,
+        //                                                       buttonTitle: "Ok")
+        //            }
+        //        }
     }
 }
 
@@ -76,9 +93,10 @@ extension FavoritesViewController: UITableViewDelegate {
         guard editingStyle == .delete else { return }
         let favorite = favorites[indexPath.row]
         
-        PersistenceManager.updateWith(favorite: favorite,
-                                      actionType: .remove) { [weak self] error in
-            guard let self else { return }
+        Task {
+            
+            let error = try await PersistenceManagerAsyncAwait.shared.updateWith(favorite: favorite,
+                                                                                 actionType: .remove)
             guard let error else {
                 favorites.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .left)
@@ -86,11 +104,14 @@ extension FavoritesViewController: UITableViewDelegate {
                 if favorites.isEmpty {
                     showEmptyStateView(with: LocalizedStrings.noFavorites, in: view)
                 }
-                return }
+                return
+            }
             
-            presentAlertViewControllerOnMainThread(alertTitle: LocalizedStrings.noRemove,
-                                                   alertMessage: error.localizedDescription,
-                                                   buttonTitle: "Ok")
+            presentCustomAlertViewController(alertTitle: LocalizedStrings.noRemove,
+                                             alertMessage: error.localizedDescription,
+                                             buttonTitle: "Ok")
+            
+            
         }
     }
 }
