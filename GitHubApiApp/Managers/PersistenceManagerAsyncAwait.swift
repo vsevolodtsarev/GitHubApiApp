@@ -21,34 +21,6 @@ final class PersistenceManagerAsyncAwait {
     static let shared = PersistenceManagerAsyncAwait()
     private let defaults = UserDefaults.standard
     
-//    func updateWith(favorite: Follower,
-//                           actionType: PersistenceActionType,
-//                           completion: @escaping (Errors?) -> Void) {
-//        retrieveFavorites { result in
-//            switch result {
-//            case .success(var favorites):
-//                
-//                switch actionType {
-//                case .add:
-//                    guard !favorites.contains(favorite) else {
-//                        completion(.alreadyFavorites)
-//                        return
-//                    }
-//                    
-//                    favorites.append(favorite)
-//                    
-//                case .remove:
-//                    favorites.removeAll { $0.login == favorite.login }
-//                }
-//                
-//                completion(save(favorites: favorites))
-//                
-//            case .failure(let error):
-//                completion(error)
-//            }
-//        }
-//    }
-    
     func updateWith(favorite: Follower,
                            actionType: PersistenceActionType) async throws -> Errors? {
         var retrievedFavorites = try await retrieveFavorites()
