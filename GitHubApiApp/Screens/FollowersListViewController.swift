@@ -53,19 +53,21 @@ final class FollowersListViewController: UIViewController {
     
     private func addUserToFavorite(user: User) {
         let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
-        PersistenceManager.updateWith(favorite: favorite,
-                                      actionType: .add) { [weak self] error in
-            guard let self else { return }
+        
+        Task {
+            let error = try await PersistenceManagerAsyncAwait.shared.updateWith(favorite: favorite,
+                                                                                 actionType: .add)
+            
             guard let error else {
-                self.presentCustomAlertViewController(alertTitle: LocalizedStrings.success,
-                                                      alertMessage: LocalizedStrings.addFavorite,
-                                                      buttonTitle: "Ok")
+                presentCustomAlertViewController(alertTitle: LocalizedStrings.success,
+                                                 alertMessage: LocalizedStrings.addFavorite,
+                                                 buttonTitle: "Ok")
                 return
             }
             
-            self.presentCustomAlertViewController(alertTitle: LocalizedStrings.wrong,
-                                                  alertMessage: error.localizedDescription,
-                                                  buttonTitle: "Ok")
+            presentCustomAlertViewController(alertTitle: LocalizedStrings.wrong,
+                                             alertMessage: error.localizedDescription,
+                                             buttonTitle: "Ok")
         }
     }
     
@@ -80,8 +82,8 @@ final class FollowersListViewController: UIViewController {
             } catch {
                 if let error = error as? Errors {
                     presentCustomAlertViewController(alertTitle: LocalizedStrings.wrong,
-                                                           alertMessage: error.localizedDescription,
-                                                           buttonTitle: "Ok")
+                                                     alertMessage: error.localizedDescription,
+                                                     buttonTitle: "Ok")
                 }
             }
         }
