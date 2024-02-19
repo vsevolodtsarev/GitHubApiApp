@@ -39,6 +39,7 @@
 		139B692B2B68D4FB000521FD /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */; };
 		139E04242B7685560098CA8D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 139E04232B7685560098CA8D /* Localizable.xcstrings */; };
 		139E04262B77C9D10098CA8D /* UITableView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139E04252B77C9D10098CA8D /* UITableView + Extensions.swift */; };
+		13A7C9CC2B83401C00BADC22 /* PersistenceManagerAsyncAwait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7C9CB2B83401C00BADC22 /* PersistenceManagerAsyncAwait.swift */; };
 		13E10F8F2B73525E004EF8E0 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E10F8E2B73525E004EF8E0 /* FavoritesCell.swift */; };
 		13E10F932B73F841004EF8E0 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E10F922B73F841004EF8E0 /* CustomTabBarController.swift */; };
 		13E10F952B75F927004EF8E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E10F942B75F927004EF8E0 /* Constants.swift */; };
@@ -80,6 +81,7 @@
 		139B692A2B68D4FB000521FD /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		139E04232B7685560098CA8D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		139E04252B77C9D10098CA8D /* UITableView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + Extensions.swift"; sourceTree = "<group>"; };
+		13A7C9CB2B83401C00BADC22 /* PersistenceManagerAsyncAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManagerAsyncAwait.swift; sourceTree = "<group>"; };
 		13E10F8E2B73525E004EF8E0 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		13E10F922B73F841004EF8E0 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		13E10F942B75F927004EF8E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -110,8 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				1331BDA22B69075D00AD1928 /* NetworkManager.swift */,
-				13F33DA32B721AB9004CDA50 /* PersistenceManager.swift */,
 				131B7B032B78FCDC00F662E3 /* NetworkManagerAsyncAwait.swift */,
+				13F33DA32B721AB9004CDA50 /* PersistenceManager.swift */,
+				13A7C9CB2B83401C00BADC22 /* PersistenceManagerAsyncAwait.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				13E10F932B73F841004EF8E0 /* CustomTabBarController.swift in Sources */,
 				1331BDA02B68F48900AD1928 /* User.swift in Sources */,
 				139B690C2B67DF58000521FD /* FavoritesViewController.swift in Sources */,
+				13A7C9CC2B83401C00BADC22 /* PersistenceManagerAsyncAwait.swift in Sources */,
 				139B69082B67DF58000521FD /* AppDelegate.swift in Sources */,
 				139B69292B68D314000521FD /* CustomBodyLabel.swift in Sources */,
 				13E10F8F2B73525E004EF8E0 /* FavoritesCell.swift in Sources */,
